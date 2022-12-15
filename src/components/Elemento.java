@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.color.ColorSpace;
 import javax.swing.border.TitledBorder;
+import telas.principal;
 
 /**
  *
@@ -15,13 +16,15 @@ import javax.swing.border.TitledBorder;
  */
 public class Elemento extends javax.swing.JPanel {
     private Point mouseInitPosClick;
-    private Color background;
+    //private Color background;
+    
     
     public Elemento() {
         initComponents();
         
-        background = getBackground();
+        //background = getBackground();
         mouseInitPosClick = new Point();
+        
     }
     
     /**
@@ -60,14 +63,14 @@ public class Elemento extends javax.swing.JPanel {
             .addGap(0, 296, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+  
+/*
     public Color getBackgroundColor(){
         return background;
     }
+*/
     private void mover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mover
         this.setLocation((int)(evt.getX() + this.getX() - mouseInitPosClick.getX()),(int)(evt.getY() + this.getY() - mouseInitPosClick.getY()));
-        
-        
     }//GEN-LAST:event_mover
 
     private void MousePosToMove(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MousePosToMove

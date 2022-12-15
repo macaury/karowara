@@ -1,22 +1,26 @@
 package components;
 
+import javax.swing.JButton;
 import menuComponents.MenuVariavelJP;
+import telas.principal;
 
 public class Variavel extends Elemento {
     public static Variavel selecionado;
     private MenuVariavelJP menuVar;
-
-    public Variavel(MenuVariavelJP menuVar) {
+    private JButton VariavelMenuJP;
+    public Variavel(MenuVariavelJP menuVar, JButton VariavelMenuJP) {
         super();
         initComponents();
         
         this.menuVar = menuVar;
+        this.VariavelMenuJP = VariavelMenuJP;
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
         IconJL = new javax.swing.JLabel();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
@@ -25,7 +29,9 @@ public class Variavel extends Elemento {
         ValorJTF = new javax.swing.JTextField();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
 
-        setPreferredSize(new java.awt.Dimension(200, 34));
+        jLabel1.setText("jLabel1");
+
+        setPreferredSize(new java.awt.Dimension(200, 50));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 alterarMenu(evt);
@@ -65,6 +71,7 @@ public class Variavel extends Elemento {
 
     private void alterarMenu(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alterarMenu
         //selecionado = this;
+        VariavelMenuJP.setVisible(true);
         menuVar.alterarMenu(this, NomeJL.getText(), ValorJTF.getText());
     }//GEN-LAST:event_alterarMenu
     
@@ -83,5 +90,6 @@ public class Variavel extends Elemento {
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

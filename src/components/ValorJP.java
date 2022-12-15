@@ -4,6 +4,8 @@
  */
 package components;
 
+import telas.principal;
+
 /**
  *
  * @author GABRIEL
@@ -14,6 +16,7 @@ public class ValorJP extends Elemento {
      * Creates new form ValorJP
      */
     public ValorJP() {
+        super();
         initComponents();
     }
 

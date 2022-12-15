@@ -7,7 +7,9 @@ package telas;
 import components.ArrayJP;
 import components.Elemento;
 import components.Variavel;
+import java.awt.CardLayout;
 import java.awt.Component;
+import java.awt.Point;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 /**
@@ -15,13 +17,14 @@ import javax.swing.JLabel;
  * @author macaurycarvalho
  */
 public class principal extends javax.swing.JFrame {
-    
+    private enum elemento{VARIAVEL,ARRAY};
     private JLabel elemTransparente;
-    
-    
     
     public principal() {
         initComponents();
+        
+        VariavelMenuJP.setVisible(false);
+        ArrayMenuJP.setVisible(false);
     }
 
     
@@ -50,7 +53,6 @@ public class principal extends javax.swing.JFrame {
         filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(32767, 15));
         workSpace = new javax.swing.JLayeredPane();
         menuAuxiliar = new javax.swing.JPanel();
-        Slide_ElementoJP = new javax.swing.JPanel();
         BarraFerramentaJTB = new javax.swing.JToolBar();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jButton12 = new javax.swing.JToggleButton();
@@ -63,14 +65,17 @@ public class principal extends javax.swing.JFrame {
         filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
         jButton2 = new javax.swing.JButton();
         filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        Slide_ElementoJP = new javax.swing.JPanel();
         Menu_Slide_ElementoJP = new javax.swing.JPanel();
         SlidesJB = new javax.swing.JButton();
-        Elemento = new javax.swing.JButton();
+        VariavelMenuJP = new javax.swing.JButton();
+        ArrayMenuJP = new javax.swing.JButton();
         Agrupar_SlideElementoJP = new javax.swing.JPanel();
-        menuVariavelJP = new menuComponents.MenuVariavelJP();
         SlideJP = new javax.swing.JPanel();
         btn_slide_atual = new javax.swing.JButton();
         btn_novo_slide = new javax.swing.JButton();
+        menuArrayJP1 = new menuComponents.MenuArrayJP();
+        menuVariavelJP = new menuComponents.MenuVariavelJP();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -99,14 +104,10 @@ public class principal extends javax.swing.JFrame {
         ferramentasGrupo.add(btn_variavel);
         btn_variavel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Union-2.png"))); // NOI18N
         btn_variavel.setAlignmentX(0.5F);
+        btn_variavel.setBorder(null);
         btn_variavel.setFocusable(false);
         btn_variavel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_variavel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_variavel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                escolherElementoTransparente(evt);
-            }
-        });
         barraDeFerramentas.add(btn_variavel);
         barraDeFerramentas.add(filler2);
 
@@ -114,13 +115,9 @@ public class principal extends javax.swing.JFrame {
         ferramentasGrupo.add(btn_for);
         btn_for.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/for.png"))); // NOI18N
         btn_for.setAlignmentX(0.5F);
+        btn_for.setBorder(null);
         btn_for.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_for.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_for.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                escolherElementoTransparente(evt);
-            }
-        });
         barraDeFerramentas.add(btn_for);
         barraDeFerramentas.add(filler3);
 
@@ -128,14 +125,10 @@ public class principal extends javax.swing.JFrame {
         ferramentasGrupo.add(btn_array);
         btn_array.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/[][].png"))); // NOI18N
         btn_array.setAlignmentX(0.5F);
+        btn_array.setBorder(null);
         btn_array.setFocusable(false);
         btn_array.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_array.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_array.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                escolherElementoTransparente(evt);
-            }
-        });
         barraDeFerramentas.add(btn_array);
         barraDeFerramentas.add(filler4);
 
@@ -143,14 +136,10 @@ public class principal extends javax.swing.JFrame {
         ferramentasGrupo.add(btn_IF);
         btn_IF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/VF.png"))); // NOI18N
         btn_IF.setAlignmentX(0.5F);
+        btn_IF.setBorder(null);
         btn_IF.setFocusable(false);
         btn_IF.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_IF.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_IF.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                escolherElementoTransparente(evt);
-            }
-        });
         barraDeFerramentas.add(btn_IF);
         barraDeFerramentas.add(filler5);
 
@@ -158,20 +147,17 @@ public class principal extends javax.swing.JFrame {
         ferramentasGrupo.add(btn_while);
         btn_while.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/Vector 2.png"))); // NOI18N
         btn_while.setAlignmentX(0.5F);
+        btn_while.setBorder(null);
         btn_while.setFocusable(false);
         btn_while.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_while.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_while.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                escolherElementoTransparente(evt);
-            }
-        });
         barraDeFerramentas.add(btn_while);
         barraDeFerramentas.add(filler8);
 
         btn_help.setBackground(new java.awt.Color(96, 164, 178));
         btn_help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ajuda.png"))); // NOI18N
         btn_help.setAlignmentX(0.5F);
+        btn_help.setBorder(null);
         btn_help.setFocusable(false);
         btn_help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_help.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -181,6 +167,7 @@ public class principal extends javax.swing.JFrame {
         btn_ajustes.setBackground(new java.awt.Color(96, 164, 178));
         btn_ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuracao.png"))); // NOI18N
         btn_ajustes.setAlignmentX(0.5F);
+        btn_ajustes.setBorder(null);
         btn_ajustes.setFocusable(false);
         btn_ajustes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_ajustes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -198,6 +185,7 @@ public class principal extends javax.swing.JFrame {
         workSpace.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 adicionarComponente(evt);
+                esconderBotaoMenuAux(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 mostrarFerramentaSelecionada(evt);
@@ -209,9 +197,6 @@ public class principal extends javax.swing.JFrame {
 
         menuAuxiliar.setLayout(new java.awt.BorderLayout());
 
-        Slide_ElementoJP.setBackground(new java.awt.Color(244, 242, 242));
-        Slide_ElementoJP.setLayout(new javax.swing.BoxLayout(Slide_ElementoJP, javax.swing.BoxLayout.PAGE_AXIS));
-
         BarraFerramentaJTB.setBackground(new java.awt.Color(244, 242, 242));
         BarraFerramentaJTB.setBorder(null);
         BarraFerramentaJTB.setAlignmentY(0.5F);
@@ -221,6 +206,7 @@ public class principal extends javax.swing.JFrame {
         jButton12.setBackground(new java.awt.Color(244, 242, 242));
         ferramentasGrupo.add(jButton12);
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/navegacao.png"))); // NOI18N
+        jButton12.setBorder(null);
         jButton12.setFocusable(false);
         jButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -230,6 +216,7 @@ public class principal extends javax.swing.JFrame {
         jToggleButton2.setBackground(new java.awt.Color(244, 242, 242));
         ferramentasGrupo.add(jToggleButton2);
         jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
+        jToggleButton2.setBorder(null);
         jToggleButton2.setFocusable(false);
         jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -239,6 +226,7 @@ public class principal extends javax.swing.JFrame {
         jToggleButton3.setBackground(new java.awt.Color(244, 242, 242));
         ferramentasGrupo.add(jToggleButton3);
         jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/apagar.png"))); // NOI18N
+        jToggleButton3.setBorder(null);
         jToggleButton3.setFocusable(false);
         jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -247,6 +235,7 @@ public class principal extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(244, 242, 242));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/aumentar-zoom.png"))); // NOI18N
+        jButton1.setBorder(null);
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -255,13 +244,17 @@ public class principal extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(244, 242, 242));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/diminuir-zoom.png"))); // NOI18N
+        jButton2.setBorder(null);
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BarraFerramentaJTB.add(jButton2);
         BarraFerramentaJTB.add(filler10);
 
-        Slide_ElementoJP.add(BarraFerramentaJTB);
+        menuAuxiliar.add(BarraFerramentaJTB, java.awt.BorderLayout.PAGE_START);
+
+        Slide_ElementoJP.setBackground(new java.awt.Color(244, 242, 242));
+        Slide_ElementoJP.setLayout(new javax.swing.BoxLayout(Slide_ElementoJP, javax.swing.BoxLayout.PAGE_AXIS));
 
         Menu_Slide_ElementoJP.setLayout(new javax.swing.BoxLayout(Menu_Slide_ElementoJP, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -271,20 +264,44 @@ public class principal extends javax.swing.JFrame {
         SlidesJB.setText("Slides");
         SlidesJB.setAlignmentX(0.5F);
         SlidesJB.setOpaque(true);
+        SlidesJB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mudarParaMenuSlide(evt);
+            }
+        });
         Menu_Slide_ElementoJP.add(SlidesJB);
 
-        Elemento.setBackground(new java.awt.Color(96, 164, 178));
-        Elemento.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
-        Elemento.setForeground(new java.awt.Color(255, 255, 255));
-        Elemento.setText("Variavel");
-        Elemento.setAlignmentX(0.5F);
-        Elemento.setOpaque(true);
-        Menu_Slide_ElementoJP.add(Elemento);
+        VariavelMenuJP.setBackground(new java.awt.Color(96, 164, 178));
+        VariavelMenuJP.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        VariavelMenuJP.setForeground(new java.awt.Color(255, 255, 255));
+        VariavelMenuJP.setText("Variavel");
+        VariavelMenuJP.setAlignmentX(0.5F);
+        VariavelMenuJP.setBorderPainted(false);
+        VariavelMenuJP.setFocusPainted(false);
+        VariavelMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mudarMenuParaVariavelMenuJP(evt);
+            }
+        });
+        Menu_Slide_ElementoJP.add(VariavelMenuJP);
+
+        ArrayMenuJP.setBackground(new java.awt.Color(96, 164, 178));
+        ArrayMenuJP.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        ArrayMenuJP.setForeground(new java.awt.Color(255, 255, 255));
+        ArrayMenuJP.setText("Array");
+        ArrayMenuJP.setAlignmentX(0.5F);
+        ArrayMenuJP.setBorderPainted(false);
+        ArrayMenuJP.setFocusPainted(false);
+        ArrayMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mudarMenuParaArrayMenuJP(evt);
+            }
+        });
+        Menu_Slide_ElementoJP.add(ArrayMenuJP);
 
         Slide_ElementoJP.add(Menu_Slide_ElementoJP);
 
         Agrupar_SlideElementoJP.setLayout(new java.awt.CardLayout());
-        Agrupar_SlideElementoJP.add(menuVariavelJP, "card2");
 
         SlideJP.setBackground(new java.awt.Color(244, 242, 242));
         SlideJP.setPreferredSize(new java.awt.Dimension(530, 170));
@@ -319,7 +336,9 @@ public class principal extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Agrupar_SlideElementoJP.add(SlideJP, "card1");
+        Agrupar_SlideElementoJP.add(SlideJP, "SLIDE");
+        Agrupar_SlideElementoJP.add(menuArrayJP1, "ARRAY");
+        Agrupar_SlideElementoJP.add(menuVariavelJP, "VARIAVEL");
 
         Slide_ElementoJP.add(Agrupar_SlideElementoJP);
 
@@ -332,16 +351,16 @@ public class principal extends javax.swing.JFrame {
         workSpaceLayout.setHorizontalGroup(
             workSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workSpaceLayout.createSequentialGroup()
-                .addContainerGap(412, Short.MAX_VALUE)
+                .addContainerGap(417, Short.MAX_VALUE)
                 .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(127, 127, 127))
+                .addGap(132, 132, 132))
         );
         workSpaceLayout.setVerticalGroup(
             workSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workSpaceLayout.createSequentialGroup()
-                .addContainerGap(525, Short.MAX_VALUE)
-                .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(482, Short.MAX_VALUE)
+                .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
 
         getContentPane().add(workSpace, java.awt.BorderLayout.CENTER);
@@ -359,7 +378,7 @@ public class principal extends javax.swing.JFrame {
     
     private void adicionarComponente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarComponente
         if(btn_variavel.isSelected()){
-            Variavel v1 = new Variavel(menuVariavelJP);
+            Variavel v1 = new Variavel(menuVariavelJP,VariavelMenuJP);
             workSpace.add(v1);
             v1.setSize(v1.getPreferredSize());
             v1.setLocation(evt.getPoint());
@@ -381,21 +400,8 @@ public class principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_moverFerramentaSelecionada
 
-    private void escolherElementoTransparente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_escolherElementoTransparente
-        if(btn_variavel.isSelected()){
-            elemTransparente = new JLabel(new javax.swing.ImageIcon(getClass().getResource("/icones/icones_das_funcoes/icon_var.png")));
-            workSpace.add(elemTransparente);
-            elemTransparente.setSize(elemTransparente.getPreferredSize());
-            elemTransparente.setLocation(0, 0);
-            esconderFerramenta(null);
-        }else{
-            workSpace.remove(elemTransparente);
-            elemTransparente = null;
-            repaint();
-        }
-        revalidate();
-    }//GEN-LAST:event_escolherElementoTransparente
-
+/**/
+    
     private void esconderFerramenta(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_esconderFerramenta
         if(elemTransparente != null){
             workSpace.remove(elemTransparente);
@@ -414,34 +420,42 @@ public class principal extends javax.swing.JFrame {
         System.out.println("clcks");
     }//GEN-LAST:event_formMouseClicked
 
-    
+    private void mudarParaMenuSlide(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarParaMenuSlide
+        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
+        
+        cl.show(Agrupar_SlideElementoJP, "SLIDE");
+    }//GEN-LAST:event_mudarParaMenuSlide
+
+    private void mudarMenuParaVariavelMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaVariavelMenuJP
+        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
+        
+        cl.show(Agrupar_SlideElementoJP, "VARIAVEL");
+    }//GEN-LAST:event_mudarMenuParaVariavelMenuJP
+
+    private void mudarMenuParaArrayMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaArrayMenuJP
+        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
+        
+        cl.show(Agrupar_SlideElementoJP, "ARRAY");
+    }//GEN-LAST:event_mudarMenuParaArrayMenuJP
+
+    private void esconderBotaoMenuAux(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_esconderBotaoMenuAux
+        
+        if(!mouseIsOverComponent( evt.getPoint(), menuAuxiliar)){
+            VariavelMenuJP.setVisible(false);
+            ArrayMenuJP.setVisible(false);
+        }
+    }//GEN-LAST:event_esconderBotaoMenuAux
+
+    private boolean mouseIsOverComponent(Point mouse, Component obj){
+        if(mouse.getX() >= obj.getLocation().getX() && mouse.getX() < obj.getWidth()+obj.getLocation().getX()){
+            if(mouse.getY() >= obj.getLocation().getY() && mouse.getY() < obj.getHeight()+obj.getLocation().getY()){
+                return true;
+            }
+        }
+        return false;
+    }
     
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new principal().setVisible(true);
@@ -451,12 +465,13 @@ public class principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agrupar_SlideElementoJP;
+    private javax.swing.JButton ArrayMenuJP;
     private javax.swing.JToolBar BarraFerramentaJTB;
-    private javax.swing.JButton Elemento;
     private javax.swing.JPanel Menu_Slide_ElementoJP;
     private javax.swing.JPanel SlideJP;
     private javax.swing.JPanel Slide_ElementoJP;
     private javax.swing.JButton SlidesJB;
+    private javax.swing.JButton VariavelMenuJP;
     private javax.swing.JToolBar barraDeFerramentas;
     private javax.swing.JToggleButton btn_IF;
     private javax.swing.JButton btn_ajustes;
@@ -489,6 +504,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
+    private menuComponents.MenuArrayJP menuArrayJP1;
     private javax.swing.JPanel menuAuxiliar;
     private menuComponents.MenuVariavelJP menuVariavelJP;
     private javax.swing.JLayeredPane workSpace;

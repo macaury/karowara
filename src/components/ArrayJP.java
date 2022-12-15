@@ -2,10 +2,12 @@ package components;
 
 import java.awt.GridLayout;
 import javax.swing.JTextField;
+import telas.principal;
 
 public class ArrayJP extends Elemento {
    
     public ArrayJP() {
+        super();
         initComponents();
     }
 
