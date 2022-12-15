@@ -52,11 +52,7 @@ public class principal extends javax.swing.JFrame {
         filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(32767, 15));
         workSpace = new javax.swing.JLayeredPane();
         menuAuxiliar = new java.awt.Panel();
-        menuJTP = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        btn_slide_atual = new javax.swing.JButton();
-        btn_novo_slide = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        panel1 = new java.awt.Panel();
         jToolBar2 = new javax.swing.JToolBar();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jButton12 = new javax.swing.JToggleButton();
@@ -69,6 +65,11 @@ public class principal extends javax.swing.JFrame {
         filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
         jButton2 = new javax.swing.JButton();
         filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        menuJTP = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        btn_slide_atual = new javax.swing.JButton();
+        btn_novo_slide = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -102,6 +103,7 @@ public class principal extends javax.swing.JFrame {
         ferramentasGrupo.add(btn_for);
         btn_for.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/for.png"))); // NOI18N
         btn_for.setAlignmentX(0.5F);
+        btn_for.setBorderPainted(false);
         btn_for.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_for.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_for);
@@ -169,16 +171,71 @@ public class principal extends javax.swing.JFrame {
         menuAuxiliar.setBackground(new java.awt.Color(204, 204, 204));
         menuAuxiliar.setLayout(new java.awt.BorderLayout());
 
+        panel1.setBackground(new java.awt.Color(242, 242, 242));
+
+        jToolBar2.setBackground(new java.awt.Color(255, 255, 255));
+        jToolBar2.setBorder(null);
+        jToolBar2.setAlignmentY(0.5F);
+        jToolBar2.setBorderPainted(false);
+        jToolBar2.setRequestFocusEnabled(false);
+        jToolBar2.add(filler11);
+
+        ferramentasGrupo.add(jButton12);
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/navegacao.png"))); // NOI18N
+        jButton12.setAlignmentX(0.5F);
+        jButton12.setFocusable(false);
+        jButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton12);
+        jToolBar2.add(filler12);
+
+        ferramentasGrupo.add(jToggleButton2);
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
+        jToggleButton2.setAlignmentX(0.5F);
+        jToggleButton2.setFocusable(false);
+        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jToggleButton2);
+        jToolBar2.add(filler13);
+
+        ferramentasGrupo.add(jToggleButton3);
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/apagar.png"))); // NOI18N
+        jToggleButton3.setAlignmentX(0.5F);
+        jToggleButton3.setFocusable(false);
+        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jToggleButton3);
+        jToolBar2.add(filler14);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/aumentar-zoom.png"))); // NOI18N
+        jButton1.setAlignmentX(0.5F);
+        jButton1.setBorderPainted(false);
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton1);
+        jToolBar2.add(filler15);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/diminuir-zoom.png"))); // NOI18N
+        jButton2.setAlignmentX(0.5F);
+        jButton2.setBorderPainted(false);
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton2);
+        jToolBar2.add(filler10);
+
+        menuJTP.setBackground(new java.awt.Color(96, 164, 178));
+        menuJTP.setForeground(new java.awt.Color(255, 255, 255));
         menuJTP.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        menuJTP.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setPreferredSize(new java.awt.Dimension(530, 170));
 
-        btn_slide_atual.setBackground(new java.awt.Color(255, 250, 255));
         btn_slide_atual.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         btn_slide_atual.setText("atual");
 
-        btn_novo_slide.setBackground(new java.awt.Color(255, 250, 255));
         btn_novo_slide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
         btn_novo_slide.setMaximumSize(null);
         btn_novo_slide.setPreferredSize(new java.awt.Dimension(150, 150));
@@ -188,19 +245,19 @@ public class principal extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(127, 127, 127)
+                .addGap(70, 70, 70)
                 .addComponent(btn_slide_atual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(75, 75, 75)
                 .addComponent(btn_novo_slide, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_novo_slide, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_slide_atual, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_slide_atual, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_novo_slide, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
         );
 
@@ -214,68 +271,35 @@ public class principal extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
+            .addGap(0, 187, Short.MAX_VALUE)
         );
 
         menuJTP.addTab("tab2", jPanel1);
 
-        menuJTP.setSelectedIndex(1);
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuJTP))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(menuJTP))
+        );
 
-        menuAuxiliar.add(menuJTP, java.awt.BorderLayout.SOUTH);
         menuJTP.getAccessibleContext().setAccessibleName("");
 
-        jToolBar2.setBackground(new java.awt.Color(204, 204, 204));
-        jToolBar2.setBorder(null);
-        jToolBar2.setAlignmentY(0.5F);
-        jToolBar2.setRequestFocusEnabled(false);
-        jToolBar2.add(filler11);
-
-        jButton12.setBackground(new java.awt.Color(204, 204, 204));
-        ferramentasGrupo.add(jButton12);
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/navegacao.png"))); // NOI18N
-        jButton12.setFocusable(false);
-        jButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton12);
-        jToolBar2.add(filler12);
-
-        jToggleButton2.setBackground(new java.awt.Color(204, 204, 204));
-        ferramentasGrupo.add(jToggleButton2);
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
-        jToggleButton2.setFocusable(false);
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jToggleButton2);
-        jToolBar2.add(filler13);
-
-        jToggleButton3.setBackground(new java.awt.Color(204, 204, 204));
-        ferramentasGrupo.add(jToggleButton3);
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/apagar.png"))); // NOI18N
-        jToggleButton3.setFocusable(false);
-        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jToggleButton3);
-        jToolBar2.add(filler14);
-
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/aumentar-zoom.png"))); // NOI18N
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton1);
-        jToolBar2.add(filler15);
-
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/diminuir-zoom.png"))); // NOI18N
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton2);
-        jToolBar2.add(filler10);
-
-        menuAuxiliar.add(jToolBar2, java.awt.BorderLayout.NORTH);
-
         workSpace.setLayer(menuAuxiliar, javax.swing.JLayeredPane.DRAG_LAYER);
+        workSpace.setLayer(panel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout workSpaceLayout = new javax.swing.GroupLayout(workSpace);
         workSpace.setLayout(workSpaceLayout);
@@ -283,15 +307,20 @@ public class principal extends javax.swing.JFrame {
             workSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(workSpaceLayout.createSequentialGroup()
                 .addGap(313, 313, 313)
-                .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addComponent(menuAuxiliar, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addGap(978, 978, 978))
+            .addGroup(workSpaceLayout.createSequentialGroup()
+                .addGap(425, 425, 425)
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         workSpaceLayout.setVerticalGroup(
             workSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workSpaceLayout.createSequentialGroup()
-                .addContainerGap(531, Short.MAX_VALUE)
-                .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(workSpaceLayout.createSequentialGroup()
+                .addContainerGap(467, Short.MAX_VALUE)
+                .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(workSpace, java.awt.BorderLayout.CENTER);
@@ -391,6 +420,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar2;
     private java.awt.Panel menuAuxiliar;
     private javax.swing.JTabbedPane menuJTP;
+    private java.awt.Panel panel1;
     private javax.swing.JLayeredPane workSpace;
     // End of variables declaration//GEN-END:variables
 }
