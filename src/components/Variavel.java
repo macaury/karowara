@@ -1,13 +1,16 @@
 package components;
 
-import javax.swing.JLabel;
+import menuComponents.MenuVariavelJP;
 
 public class Variavel extends Elemento {
+    public static Variavel selecionado;
+    private MenuVariavelJP menuVar;
 
-
-    public Variavel() {
+    public Variavel(MenuVariavelJP menuVar) {
         super();
         initComponents();
+        
+        this.menuVar = menuVar;
     }
 
     @SuppressWarnings("unchecked")
@@ -23,6 +26,11 @@ public class Variavel extends Elemento {
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
 
         setPreferredSize(new java.awt.Dimension(200, 34));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                alterarMenu(evt);
+            }
+        });
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
         add(filler1);
 
@@ -55,6 +63,15 @@ public class Variavel extends Elemento {
         //PROTOTIPO TESTE FUNCIONA
     }//GEN-LAST:event_aleatorioParadeletar
 
+    private void alterarMenu(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alterarMenu
+        //selecionado = this;
+        menuVar.alterarMenu(this, NomeJL.getText(), ValorJTF.getText());
+    }//GEN-LAST:event_alterarMenu
+    
+    public void alterarVariavel(String nome, String valor){
+        NomeJL.setText(nome);
+        ValorJTF.setText(valor);
+    }
     public void refazer(){
         initComponents();
     }
