@@ -19,6 +19,10 @@ public class ArrayJP extends Elemento {
         this.arrayMenuJP = arrayMenuJP;
     }
 
+    public ArrayJP() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
