@@ -24,5 +24,4 @@ hs_err_pid*
 replay_pid*
 /Karowara/nbproject/private/
 /dist/
-
-/private/
+/build/
