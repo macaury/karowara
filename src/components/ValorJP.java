@@ -4,6 +4,8 @@
  */
 package components;
 
+import java.awt.Component;
+import java.awt.Point;
 import telas.principal;
 
 /**
@@ -12,12 +14,12 @@ import telas.principal;
  */
 public class ValorJP extends Elemento {
 
-    /**
-     * Creates new form ValorJP
-     */
-    public ValorJP() {
+
+    public ValorJP(String nome) {
         super();
         initComponents();
+        ValorJL.setText(nome);
+        
     }
 
     /**
@@ -31,9 +33,33 @@ public class ValorJP extends Elemento {
 
         ValorJL = new javax.swing.JLabel();
 
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
-        add(ValorJL);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                recebeValorExterno(evt);
+            }
+        });
+        setLayout(new java.awt.BorderLayout());
+
+        ValorJL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ValorJL.setText("asdasd");
+        add(ValorJL, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+
+    private void recebeValorExterno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recebeValorExterno
+        for (Component componente : this.getParent().getComponents()) {
+            if(componente.getClass() == Variavel.class){
+                if(this.getX() >= componente.getLocation().getX() && this.getX() < componente.getWidth()+componente.getLocation().getX()){
+                    if(this.getY() >= componente.getLocation().getY() && this.getY() < componente.getHeight()+componente.getLocation().getY()){
+                        Variavel var = (Variavel) componente;
+                        var.alterarValor(ValorJL.getText());
+                        this.getParent().remove(this);
+                    }
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_recebeValorExterno
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
