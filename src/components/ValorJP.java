@@ -48,10 +48,10 @@ public class ValorJP extends Elemento {
 
     private void recebeValorExterno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recebeValorExterno
         for (Component componente : this.getParent().getComponents()) {
-            if(componente.getClass() == Variavel.class){
+            if(componente.getClass() == VariavelJP.class){
                 if(this.getX() >= componente.getLocation().getX() && this.getX() < componente.getWidth()+componente.getLocation().getX()){
                     if(this.getY() >= componente.getLocation().getY() && this.getY() < componente.getHeight()+componente.getLocation().getY()){
-                        Variavel var = (Variavel) componente;
+                        VariavelJP var = (VariavelJP) componente;
                         var.alterarValor(ValorJL.getText());
                         this.getParent().remove(this);
                     }

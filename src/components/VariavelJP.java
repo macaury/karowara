@@ -5,12 +5,12 @@ import javax.swing.JButton;
 import menuComponents.MenuVariavelJP;
 import telas.principal;
 
-public class Variavel extends Elemento {
+public class VariavelJP extends Elemento {
     private MenuVariavelJP menuVar;
     private JButton VariavelMenuJP;
     
     
-    public Variavel(MenuVariavelJP menuVar, JButton VariavelMenuJP) {
+    public VariavelJP(MenuVariavelJP menuVar, JButton VariavelMenuJP) {
         super();
         initComponents();
         

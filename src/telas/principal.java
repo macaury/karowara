@@ -5,7 +5,8 @@
 package telas;
 
 import components.ArrayJP;
-import components.Variavel;
+import components.CondicaoJP;
+import components.VariavelJP;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -215,7 +216,6 @@ public class principal extends javax.swing.JFrame {
         workSpace.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 esconderBotaoMenuAux(evt);
-                adicionarComponente(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 mostrarFerramentaSelecionada(evt);
@@ -228,6 +228,7 @@ public class principal extends javax.swing.JFrame {
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 rabiscar(evt);
+                adicionarComponente(evt);
             }
         });
         workSpace.add(RabiscarJL);
@@ -469,14 +470,11 @@ public class principal extends javax.swing.JFrame {
 
     private void adicionarComponente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarComponente
         if(btn_variavel.isSelected()){
-            Variavel v1 = new Variavel(menuVariavelJP,VariavelMenuJP);
+            VariavelJP v1 = new VariavelJP(menuVariavelJP,VariavelMenuJP);
             workSpace.add(v1, JLayeredPane.PALETTE_LAYER);
             v1.setSize(v1.getPreferredSize());
             v1.setLocation(evt.getPoint());
-
-            
             //v1.setLocation(evt.getX()-v1.getWidth()/2, evt.getY()-v1.getHeight()/2-MENU_WINDOWS);
-            
         }
         else if(btn_array.isSelected()){
             ArrayJP a1 = new ArrayJP(menuArrayJP, ArrayMenuJP);
@@ -484,6 +482,11 @@ public class principal extends javax.swing.JFrame {
             a1.setSize(a1.getPreferredSize());
             a1.setLocation(evt.getPoint());
             //a1.setLocation(evt.getX()-a1.getWidth()/2, evt.getY()-a1.getHeight()/2-MENU_WINDOWS);
+        }else if(btn_IF.isSelected()){
+            CondicaoJP c1 = new CondicaoJP();
+            workSpace.add(c1);
+            c1.setSize(c1.getPreferredSize());
+            c1.setLocation(evt.getPoint());
         }
         revalidate();
     }//GEN-LAST:event_adicionarComponente

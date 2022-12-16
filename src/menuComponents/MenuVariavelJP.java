@@ -4,14 +4,14 @@
  */
 package menuComponents;
 
-import components.Variavel;
+import components.VariavelJP;
 
 /**
  *
  * @author GABRIEL
  */
 public class MenuVariavelJP extends javax.swing.JPanel {
-    private Variavel var;
+    private VariavelJP var;
     /**
      * Creates new form MenuVariavelJP
      */
@@ -126,7 +126,7 @@ public class MenuVariavelJP extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_atualizarVariavel
     
-    public void alterarMenu(Variavel nova, String nome, String valor) {
+    public void alterarMenu(VariavelJP nova, String nome, String valor) {
         var = nova;
         NomeJTF.setText(nome);
         ValorJTF.setText(valor);
