@@ -70,7 +70,6 @@ public class principal extends javax.swing.JFrame {
         Agrupar = new javax.swing.JPanel();
         workSpace = new javax.swing.JLayeredPane();
         RabiscarJL = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
         menuAuxiliar = new javax.swing.JPanel();
         BarraFerramentaJTB = new javax.swing.JToolBar();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
@@ -201,7 +200,8 @@ public class principal extends javax.swing.JFrame {
         workSpace.setBackground(new java.awt.Color(255, 255, 255));
         workSpace.setAlignmentX(0.0F);
         workSpace.setAlignmentY(0.0F);
-        workSpace.setPreferredSize(new java.awt.Dimension(400, 400));
+        workSpace.setOpaque(true);
+        workSpace.setPreferredSize(null);
         workSpace.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 tracarLinha(evt);
@@ -232,9 +232,6 @@ public class principal extends javax.swing.JFrame {
         RabiscarJL.setBounds(30, 60, 130, 120);
 
         Agrupar.add(workSpace, java.awt.BorderLayout.PAGE_START);
-
-        jScrollPane1.setBorder(null);
-        Agrupar.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         menuAuxiliar.setPreferredSize(new java.awt.Dimension(530, 250));
         menuAuxiliar.setLayout(new java.awt.BorderLayout());
@@ -621,7 +618,6 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JToggleButton jButton12;
     private javax.swing.JButton jButton2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton limparRabiscoJTB;
     private menuComponents.MenuArrayJP menuArrayJP1;
     private javax.swing.JPanel menuAuxiliar;
