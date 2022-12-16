@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/teste/telas/testes_telas.java</file>
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/ajustesComponents/OpcoesAcessibilidade.java</file>
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/ajustesComponents/teste.java</file>
-=======
             <file>file:/C:/Users/GABRIEL/Documents/GitHub/karowara/src/telas/principal.java</file>
->>>>>>> d37ad083442791881125a2c66879561015f59246
+            <file>file:/C:/Users/GABRIEL/Documents/GitHub/karowara/src/menuComponents/MenuArrayJP.java</file>
+            <file>file:/C:/Users/GABRIEL/Documents/GitHub/karowara/src/menuComponents/MenuVariavelJP.java</file>
+            <file>file:/C:/Users/GABRIEL/Documents/GitHub/karowara/src/components/Variavel.java</file>
+            <file>file:/C:/Users/GABRIEL/Documents/GitHub/karowara/src/components/ArrayJP.java</file>
         </group>
     </open-files>
 </project-private>

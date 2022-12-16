@@ -4,15 +4,14 @@
  */
 package menuComponents;
 
+import components.ArrayJP;
+
 /**
  *
  * @author GABRIEL
  */
 public class MenuArrayJP extends javax.swing.JPanel {
-
-    /**
-     * Creates new form MenuArrayJP
-     */
+    ArrayJP array;
     public MenuArrayJP() {
         initComponents();
     }
@@ -48,6 +47,10 @@ public class MenuArrayJP extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void alterarMenu(ArrayJP array, String nome, String[] valores){
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
