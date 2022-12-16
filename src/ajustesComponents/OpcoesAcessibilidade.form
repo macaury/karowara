@@ -38,7 +38,7 @@
                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="428" max="32767" attributes="0"/>
+              <EmptySpace pref="420" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jComboBox1" max="32767" attributes="0"/>
                   <Component id="jComboBox2" max="32767" attributes="0"/>
@@ -165,10 +165,11 @@
           <Font name="Helvetica Neue" size="18" style="1"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Deuteranomalia"/>
-            <StringItem index="1" value="Pronatomalia"/>
-            <StringItem index="2" value="Tritanopia"/>
+          <StringArray count="4">
+            <StringItem index="0" value="N&#xe3;o selecionado"/>
+            <StringItem index="1" value="Deuteranomalia"/>
+            <StringItem index="2" value="Pronatomalia"/>
+            <StringItem index="3" value="Tritanopia"/>
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

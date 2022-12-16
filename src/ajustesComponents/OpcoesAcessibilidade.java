@@ -73,7 +73,7 @@ public class OpcoesAcessibilidade extends javax.swing.JPanel {
         jLabel5.setText("Modo Daltonismo");
 
         jComboBox1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deuteranomalia", "Pronatomalia", "Tritanopia" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Não selecionado", "Deuteranomalia", "Pronatomalia", "Tritanopia" }));
         jComboBox1.setBorder(null);
 
         jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
@@ -101,7 +101,7 @@ public class OpcoesAcessibilidade extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 428, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 420, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
