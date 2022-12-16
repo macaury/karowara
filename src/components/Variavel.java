@@ -1,5 +1,6 @@
 package components;
 
+import java.awt.Component;
 import javax.swing.JButton;
 import menuComponents.MenuVariavelJP;
 import telas.principal;
@@ -46,28 +47,26 @@ public class Variavel extends Elemento {
         add(NomeJL);
         add(filler2);
 
+        ValorJTF.setEditable(false);
         ValorJTF.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aleatorioParadeletar(evt);
+                criarCopiaValor(evt);
             }
         });
         add(ValorJTF);
         add(filler3);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void aleatorioParadeletar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aleatorioParadeletar
+    private void criarCopiaValor(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_criarCopiaValor
 
-        //JLabel teste = new JLabel("asdadadsada");
+        ValorJP teste = new ValorJP(ValorJTF.getText());
+        this.getParent().add(teste);
         
-        //FUNCIONA
-        //this.getParent().getParent().add(teste);
-        //TAMBEM FUNCIONA
-        //this.getTopLevelAncestor().add(teste);
-        
-        
+        teste.setSize(teste.getPreferredSize());
+        teste.setLocation(evt.getPoint());
         //teste.setBounds(100, 100, 100, 100);
-        //PROTOTIPO TESTE FUNCIONA
-    }//GEN-LAST:event_aleatorioParadeletar
+        revalidate();
+    }//GEN-LAST:event_criarCopiaValor
 
     private void alterarMenu(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alterarMenu
         //selecionado = this;
@@ -79,8 +78,9 @@ public class Variavel extends Elemento {
         NomeJL.setText(nome);
         ValorJTF.setText(valor);
     }
-    public void refazer(){
-        initComponents();
+    
+    public void alterarValor(String valor){
+        ValorJTF.setText(valor);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IconJL;

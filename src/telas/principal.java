@@ -5,13 +5,17 @@
 package telas;
 
 import components.ArrayJP;
-import components.Elemento;
 import components.Variavel;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.Graphics2D;
 import java.awt.Point;
-import javax.swing.JButton;
+import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 /**
  *
  * @author macaurycarvalho
@@ -20,11 +24,23 @@ public class principal extends javax.swing.JFrame {
     private enum elemento{VARIAVEL,ARRAY};
     private JLabel elemTransparente;
     
+    private JLayeredPane layerLayout;
+    
+    private Point mousePosAnterior;
+    private BufferedImage bufferedImage;
+    private Graphics2D g2d;
+    
     public principal() {
         initComponents();
         
+        
+        
         VariavelMenuJP.setVisible(false);
         ArrayMenuJP.setVisible(false);
+        CondicaoMenuJP.setVisible(false);
+        LacoMenuJP.setVisible(false);
+        
+        
     }
 
     
@@ -34,32 +50,35 @@ public class principal extends javax.swing.JFrame {
 
         ferramentasGrupo = new javax.swing.ButtonGroup();
         barraDeFerramentas = new javax.swing.JToolBar();
-        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(32767, 15));
+        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(15, 15), new java.awt.Dimension(15, 15), new java.awt.Dimension(15, 15));
         btn_home = new javax.swing.JToggleButton();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 60), new java.awt.Dimension(0, 60), new java.awt.Dimension(32767, 60));
+        filler20 = new javax.swing.Box.Filler(new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60));
         btn_variavel = new javax.swing.JToggleButton();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 60), new java.awt.Dimension(0, 60), new java.awt.Dimension(32767, 60));
+        filler24 = new javax.swing.Box.Filler(new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60));
         btn_for = new javax.swing.JToggleButton();
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 60), new java.awt.Dimension(0, 60), new java.awt.Dimension(32767, 60));
+        filler23 = new javax.swing.Box.Filler(new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60));
         btn_array = new javax.swing.JToggleButton();
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 60), new java.awt.Dimension(0, 60), new java.awt.Dimension(32767, 60));
+        filler22 = new javax.swing.Box.Filler(new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60));
         btn_IF = new javax.swing.JToggleButton();
-        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 60), new java.awt.Dimension(0, 60), new java.awt.Dimension(32767, 60));
+        filler21 = new javax.swing.Box.Filler(new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60), new java.awt.Dimension(60, 60));
         btn_while = new javax.swing.JToggleButton();
-        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
+        filler19 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         btn_help = new javax.swing.JButton();
-        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 40), new java.awt.Dimension(0, 40), new java.awt.Dimension(32767, 40));
+        filler25 = new javax.swing.Box.Filler(new java.awt.Dimension(40, 40), new java.awt.Dimension(40, 40), new java.awt.Dimension(40, 40));
         btn_ajustes = new javax.swing.JButton();
-        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(32767, 15));
+        filler26 = new javax.swing.Box.Filler(new java.awt.Dimension(15, 15), new java.awt.Dimension(15, 15), new java.awt.Dimension(15, 15));
+        Agrupar = new javax.swing.JPanel();
         workSpace = new javax.swing.JLayeredPane();
+        RabiscarJL = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         menuAuxiliar = new javax.swing.JPanel();
         BarraFerramentaJTB = new javax.swing.JToolBar();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jButton12 = new javax.swing.JToggleButton();
         filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
-        jToggleButton2 = new javax.swing.JToggleButton();
+        rabiscarJTB = new javax.swing.JToggleButton();
         filler13 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
-        jToggleButton3 = new javax.swing.JToggleButton();
+        limparRabiscoJTB = new javax.swing.JButton();
         filler14 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
         jButton1 = new javax.swing.JButton();
         filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
@@ -70,35 +89,36 @@ public class principal extends javax.swing.JFrame {
         SlidesJB = new javax.swing.JButton();
         VariavelMenuJP = new javax.swing.JButton();
         ArrayMenuJP = new javax.swing.JButton();
+        CondicaoMenuJP = new javax.swing.JButton();
+        LacoMenuJP = new javax.swing.JButton();
         Agrupar_SlideElementoJP = new javax.swing.JPanel();
         SlideJP = new javax.swing.JPanel();
+        filler18 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         btn_slide_atual = new javax.swing.JButton();
+        filler17 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
         btn_novo_slide = new javax.swing.JButton();
+        filler16 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         menuArrayJP1 = new menuComponents.MenuArrayJP();
         menuVariavelJP = new menuComponents.MenuVariavelJP();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                formMouseClicked(evt);
-            }
-        });
 
         barraDeFerramentas.setBackground(new java.awt.Color(96, 164, 178));
         barraDeFerramentas.setBorder(null);
         barraDeFerramentas.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        barraDeFerramentas.add(filler6);
+        barraDeFerramentas.add(filler8);
 
         btn_home.setBackground(new java.awt.Color(96, 164, 178));
         ferramentasGrupo.add(btn_home);
         btn_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/home.png"))); // NOI18N
         btn_home.setAlignmentX(0.5F);
+        btn_home.setBorder(null);
         btn_home.setFocusable(false);
         btn_home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_home);
-        barraDeFerramentas.add(filler1);
+        barraDeFerramentas.add(filler20);
 
         btn_variavel.setBackground(new java.awt.Color(96, 164, 178));
         ferramentasGrupo.add(btn_variavel);
@@ -109,7 +129,7 @@ public class principal extends javax.swing.JFrame {
         btn_variavel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_variavel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_variavel);
-        barraDeFerramentas.add(filler2);
+        barraDeFerramentas.add(filler24);
 
         btn_for.setBackground(new java.awt.Color(96, 164, 178));
         ferramentasGrupo.add(btn_for);
@@ -119,7 +139,7 @@ public class principal extends javax.swing.JFrame {
         btn_for.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_for.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_for);
-        barraDeFerramentas.add(filler3);
+        barraDeFerramentas.add(filler23);
 
         btn_array.setBackground(new java.awt.Color(96, 164, 178));
         ferramentasGrupo.add(btn_array);
@@ -130,7 +150,7 @@ public class principal extends javax.swing.JFrame {
         btn_array.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_array.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_array);
-        barraDeFerramentas.add(filler4);
+        barraDeFerramentas.add(filler22);
 
         btn_IF.setBackground(new java.awt.Color(96, 164, 178));
         ferramentasGrupo.add(btn_IF);
@@ -141,7 +161,7 @@ public class principal extends javax.swing.JFrame {
         btn_IF.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_IF.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_IF);
-        barraDeFerramentas.add(filler5);
+        barraDeFerramentas.add(filler21);
 
         btn_while.setBackground(new java.awt.Color(96, 164, 178));
         ferramentasGrupo.add(btn_while);
@@ -152,7 +172,7 @@ public class principal extends javax.swing.JFrame {
         btn_while.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_while.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_while);
-        barraDeFerramentas.add(filler8);
+        barraDeFerramentas.add(filler19);
 
         btn_help.setBackground(new java.awt.Color(96, 164, 178));
         btn_help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ajuda.png"))); // NOI18N
@@ -162,7 +182,7 @@ public class principal extends javax.swing.JFrame {
         btn_help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_help.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_help);
-        barraDeFerramentas.add(filler9);
+        barraDeFerramentas.add(filler25);
 
         btn_ajustes.setBackground(new java.awt.Color(96, 164, 178));
         btn_ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuracao.png"))); // NOI18N
@@ -172,20 +192,28 @@ public class principal extends javax.swing.JFrame {
         btn_ajustes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_ajustes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeFerramentas.add(btn_ajustes);
-        barraDeFerramentas.add(filler7);
+        barraDeFerramentas.add(filler26);
 
         getContentPane().add(barraDeFerramentas, java.awt.BorderLayout.WEST);
 
+        Agrupar.setLayout(new java.awt.BorderLayout());
+
         workSpace.setBackground(new java.awt.Color(255, 255, 255));
+        workSpace.setAlignmentX(0.0F);
+        workSpace.setAlignmentY(0.0F);
+        workSpace.setPreferredSize(new java.awt.Dimension(400, 400));
         workSpace.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                tracarLinha(evt);
+            }
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 moverFerramentaSelecionada(evt);
             }
         });
         workSpace.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adicionarComponente(evt);
                 esconderBotaoMenuAux(evt);
+                adicionarComponente(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 mostrarFerramentaSelecionada(evt);
@@ -193,8 +221,22 @@ public class principal extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 esconderFerramenta(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                mousePosAnterior(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                rabiscar(evt);
+            }
         });
+        workSpace.add(RabiscarJL);
+        RabiscarJL.setBounds(30, 60, 130, 120);
 
+        Agrupar.add(workSpace, java.awt.BorderLayout.PAGE_START);
+
+        jScrollPane1.setBorder(null);
+        Agrupar.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        menuAuxiliar.setPreferredSize(new java.awt.Dimension(530, 250));
         menuAuxiliar.setLayout(new java.awt.BorderLayout());
 
         BarraFerramentaJTB.setBackground(new java.awt.Color(244, 242, 242));
@@ -213,24 +255,28 @@ public class principal extends javax.swing.JFrame {
         BarraFerramentaJTB.add(jButton12);
         BarraFerramentaJTB.add(filler12);
 
-        jToggleButton2.setBackground(new java.awt.Color(244, 242, 242));
-        ferramentasGrupo.add(jToggleButton2);
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
-        jToggleButton2.setBorder(null);
-        jToggleButton2.setFocusable(false);
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        BarraFerramentaJTB.add(jToggleButton2);
+        rabiscarJTB.setBackground(new java.awt.Color(244, 242, 242));
+        ferramentasGrupo.add(rabiscarJTB);
+        rabiscarJTB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
+        rabiscarJTB.setBorder(null);
+        rabiscarJTB.setFocusable(false);
+        rabiscarJTB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        rabiscarJTB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BarraFerramentaJTB.add(rabiscarJTB);
         BarraFerramentaJTB.add(filler13);
 
-        jToggleButton3.setBackground(new java.awt.Color(244, 242, 242));
-        ferramentasGrupo.add(jToggleButton3);
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/apagar.png"))); // NOI18N
-        jToggleButton3.setBorder(null);
-        jToggleButton3.setFocusable(false);
-        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        BarraFerramentaJTB.add(jToggleButton3);
+        limparRabiscoJTB.setBackground(new java.awt.Color(244, 242, 242));
+        limparRabiscoJTB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/apagar.png"))); // NOI18N
+        limparRabiscoJTB.setBorder(null);
+        limparRabiscoJTB.setFocusable(false);
+        limparRabiscoJTB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        limparRabiscoJTB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        limparRabiscoJTB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                apagarRabisco(evt);
+            }
+        });
+        BarraFerramentaJTB.add(limparRabiscoJTB);
         BarraFerramentaJTB.add(filler14);
 
         jButton1.setBackground(new java.awt.Color(244, 242, 242));
@@ -239,6 +285,11 @@ public class principal extends javax.swing.JFrame {
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                zoomIn(evt);
+            }
+        });
         BarraFerramentaJTB.add(jButton1);
         BarraFerramentaJTB.add(filler15);
 
@@ -251,9 +302,10 @@ public class principal extends javax.swing.JFrame {
         BarraFerramentaJTB.add(jButton2);
         BarraFerramentaJTB.add(filler10);
 
-        menuAuxiliar.add(BarraFerramentaJTB, java.awt.BorderLayout.PAGE_START);
+        menuAuxiliar.add(BarraFerramentaJTB, java.awt.BorderLayout.NORTH);
 
         Slide_ElementoJP.setBackground(new java.awt.Color(244, 242, 242));
+        Slide_ElementoJP.setPreferredSize(new java.awt.Dimension(530, 170));
         Slide_ElementoJP.setLayout(new javax.swing.BoxLayout(Slide_ElementoJP, javax.swing.BoxLayout.PAGE_AXIS));
 
         Menu_Slide_ElementoJP.setLayout(new javax.swing.BoxLayout(Menu_Slide_ElementoJP, javax.swing.BoxLayout.LINE_AXIS));
@@ -299,42 +351,62 @@ public class principal extends javax.swing.JFrame {
         });
         Menu_Slide_ElementoJP.add(ArrayMenuJP);
 
+        CondicaoMenuJP.setBackground(new java.awt.Color(96, 164, 178));
+        CondicaoMenuJP.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        CondicaoMenuJP.setForeground(new java.awt.Color(255, 255, 255));
+        CondicaoMenuJP.setText("Condição");
+        CondicaoMenuJP.setAlignmentX(0.5F);
+        CondicaoMenuJP.setBorderPainted(false);
+        CondicaoMenuJP.setFocusPainted(false);
+        CondicaoMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mudarMenuParaCondicaoMenuJP(evt);
+            }
+        });
+        Menu_Slide_ElementoJP.add(CondicaoMenuJP);
+
+        LacoMenuJP.setBackground(new java.awt.Color(96, 164, 178));
+        LacoMenuJP.setFont(new java.awt.Font("Helvetica Neue", 1, 20)); // NOI18N
+        LacoMenuJP.setForeground(new java.awt.Color(255, 255, 255));
+        LacoMenuJP.setText("Laço");
+        LacoMenuJP.setAlignmentX(0.5F);
+        LacoMenuJP.setBorderPainted(false);
+        LacoMenuJP.setFocusPainted(false);
+        LacoMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mudarMenuParaLacoMenuJP(evt);
+            }
+        });
+        Menu_Slide_ElementoJP.add(LacoMenuJP);
+
         Slide_ElementoJP.add(Menu_Slide_ElementoJP);
 
+        Agrupar_SlideElementoJP.setPreferredSize(new java.awt.Dimension(530, 170));
         Agrupar_SlideElementoJP.setLayout(new java.awt.CardLayout());
 
         SlideJP.setBackground(new java.awt.Color(244, 242, 242));
-        SlideJP.setPreferredSize(new java.awt.Dimension(530, 170));
+        SlideJP.setPreferredSize(new java.awt.Dimension(530, 70));
+        SlideJP.setLayout(new javax.swing.BoxLayout(SlideJP, javax.swing.BoxLayout.LINE_AXIS));
+        SlideJP.add(filler18);
 
         btn_slide_atual.setBackground(new java.awt.Color(255, 250, 255));
         btn_slide_atual.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         btn_slide_atual.setText("atual");
+        btn_slide_atual.setBorder(null);
+        btn_slide_atual.setMaximumSize(new java.awt.Dimension(150, 150));
+        btn_slide_atual.setMinimumSize(new java.awt.Dimension(150, 150));
+        btn_slide_atual.setPreferredSize(new java.awt.Dimension(150, 150));
+        SlideJP.add(btn_slide_atual);
+        SlideJP.add(filler17);
 
         btn_novo_slide.setBackground(new java.awt.Color(255, 250, 255));
         btn_novo_slide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
-        btn_novo_slide.setMaximumSize(null);
+        btn_novo_slide.setBorder(null);
+        btn_novo_slide.setMaximumSize(new java.awt.Dimension(150, 150));
+        btn_novo_slide.setMinimumSize(new java.awt.Dimension(150, 150));
         btn_novo_slide.setPreferredSize(new java.awt.Dimension(150, 150));
-
-        javax.swing.GroupLayout SlideJPLayout = new javax.swing.GroupLayout(SlideJP);
-        SlideJP.setLayout(SlideJPLayout);
-        SlideJPLayout.setHorizontalGroup(
-            SlideJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SlideJPLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(btn_slide_atual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_novo_slide, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-        SlideJPLayout.setVerticalGroup(
-            SlideJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SlideJPLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(SlideJPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_novo_slide, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_slide_atual, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13))
-        );
+        SlideJP.add(btn_novo_slide);
+        SlideJP.add(filler16);
 
         Agrupar_SlideElementoJP.add(SlideJP, "SLIDE");
         Agrupar_SlideElementoJP.add(menuArrayJP1, "ARRAY");
@@ -344,64 +416,48 @@ public class principal extends javax.swing.JFrame {
 
         menuAuxiliar.add(Slide_ElementoJP, java.awt.BorderLayout.CENTER);
 
-        workSpace.setLayer(menuAuxiliar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Agrupar.add(menuAuxiliar, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout workSpaceLayout = new javax.swing.GroupLayout(workSpace);
-        workSpace.setLayout(workSpaceLayout);
-        workSpaceLayout.setHorizontalGroup(
-            workSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workSpaceLayout.createSequentialGroup()
-                .addContainerGap(417, Short.MAX_VALUE)
-                .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132))
-        );
-        workSpaceLayout.setVerticalGroup(
-            workSpaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workSpaceLayout.createSequentialGroup()
-                .addContainerGap(482, Short.MAX_VALUE)
-                .addComponent(menuAuxiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
-        );
-
-        getContentPane().add(workSpace, java.awt.BorderLayout.CENTER);
+        getContentPane().add(Agrupar, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void criarMenuElemento(Component menu){
-        JButton botaoMenu = new JButton("VAR-MUDARDEPOIS");
-        Slide_ElementoJP.add(botaoMenu, 1);
-        botaoMenu.setSize(SlidesJB.getSize());
-        botaoMenu.setBackground(SlideJP.getBackground());
-        
-    }
-    
-    private void adicionarComponente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarComponente
-        if(btn_variavel.isSelected()){
-            Variavel v1 = new Variavel(menuVariavelJP,VariavelMenuJP);
-            workSpace.add(v1);
-            v1.setSize(v1.getPreferredSize());
-            v1.setLocation(evt.getPoint());
-            //v1.setLocation(evt.getX()-v1.getWidth()/2, evt.getY()-v1.getHeight()/2-MENU_WINDOWS);
-            revalidate();
-        }
-        else if(btn_array.isSelected()){
-            ArrayJP a1 = new ArrayJP();
-            workSpace.add(a1);
-            a1.setSize(a1.getPreferredSize());
-            //a1.setLocation(evt.getX()-a1.getWidth()/2, evt.getY()-a1.getHeight()/2-MENU_WINDOWS);
-            revalidate();
-        }
-    }//GEN-LAST:event_adicionarComponente
+    private void mudarMenuParaLacoMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaLacoMenuJP
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mudarMenuParaLacoMenuJP
 
-    private void moverFerramentaSelecionada(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moverFerramentaSelecionada
-        if(elemTransparente != null){
-            elemTransparente.setLocation(evt.getPoint());
-        }
-    }//GEN-LAST:event_moverFerramentaSelecionada
+    private void mudarMenuParaCondicaoMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaCondicaoMenuJP
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mudarMenuParaCondicaoMenuJP
 
-/**/
-    
+    private void mudarMenuParaArrayMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaArrayMenuJP
+        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
+
+        cl.show(Agrupar_SlideElementoJP, "ARRAY");
+    }//GEN-LAST:event_mudarMenuParaArrayMenuJP
+
+    private void mudarMenuParaVariavelMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaVariavelMenuJP
+        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
+
+        cl.show(Agrupar_SlideElementoJP, "VARIAVEL");
+    }//GEN-LAST:event_mudarMenuParaVariavelMenuJP
+
+    private void mudarParaMenuSlide(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarParaMenuSlide
+        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
+
+        cl.show(Agrupar_SlideElementoJP, "SLIDE");
+    }//GEN-LAST:event_mudarParaMenuSlide
+
+    private void zoomIn(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_zoomIn
+        //workSpace.setSize(workSpace.getWidth()*2, workSpace.getHeight()*2);
+        /*for (Component comp : workSpace.getComponents()) {
+            comp.setSize(comp.getWidth()*2,comp.getHeight()*2);
+        }
+        repaint();*/
+
+    }//GEN-LAST:event_zoomIn
+
     private void esconderFerramenta(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_esconderFerramenta
         if(elemTransparente != null){
             workSpace.remove(elemTransparente);
@@ -416,36 +472,92 @@ public class principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mostrarFerramentaSelecionada
 
-    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        System.out.println("clcks");
-    }//GEN-LAST:event_formMouseClicked
-
-    private void mudarParaMenuSlide(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarParaMenuSlide
-        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
-        
-        cl.show(Agrupar_SlideElementoJP, "SLIDE");
-    }//GEN-LAST:event_mudarParaMenuSlide
-
-    private void mudarMenuParaVariavelMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaVariavelMenuJP
-        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
-        
-        cl.show(Agrupar_SlideElementoJP, "VARIAVEL");
-    }//GEN-LAST:event_mudarMenuParaVariavelMenuJP
-
-    private void mudarMenuParaArrayMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaArrayMenuJP
-        CardLayout cl = (CardLayout) Agrupar_SlideElementoJP.getLayout();
-        
-        cl.show(Agrupar_SlideElementoJP, "ARRAY");
-    }//GEN-LAST:event_mudarMenuParaArrayMenuJP
-
     private void esconderBotaoMenuAux(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_esconderBotaoMenuAux
-        
+
         if(!mouseIsOverComponent( evt.getPoint(), menuAuxiliar)){
             VariavelMenuJP.setVisible(false);
             ArrayMenuJP.setVisible(false);
         }
     }//GEN-LAST:event_esconderBotaoMenuAux
 
+    private void adicionarComponente(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarComponente
+        if(btn_variavel.isSelected()){
+            Variavel v1 = new Variavel(menuVariavelJP,VariavelMenuJP);
+            workSpace.add(v1, JLayeredPane.PALETTE_LAYER);
+            v1.setSize(v1.getPreferredSize());
+            v1.setLocation(evt.getPoint());
+
+            
+            //v1.setLocation(evt.getX()-v1.getWidth()/2, evt.getY()-v1.getHeight()/2-MENU_WINDOWS);
+            
+        }
+        else if(btn_array.isSelected()){
+            ArrayJP a1 = new ArrayJP();
+            workSpace.add(a1);
+            a1.setSize(a1.getPreferredSize());
+            a1.setLocation(evt.getPoint());
+            //a1.setLocation(evt.getX()-a1.getWidth()/2, evt.getY()-a1.getHeight()/2-MENU_WINDOWS);
+        }
+        revalidate();
+    }//GEN-LAST:event_adicionarComponente
+
+    private void moverFerramentaSelecionada(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moverFerramentaSelecionada
+        if(elemTransparente != null){
+            elemTransparente.setLocation(evt.getPoint());
+        }
+    }//GEN-LAST:event_moverFerramentaSelecionada
+
+    private void mousePosAnterior(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mousePosAnterior
+        Raster linhaAntiga = null;
+
+        if(bufferedImage != null){
+            linhaAntiga = bufferedImage.getData();
+        }
+        bufferedImage = new BufferedImage(workSpace.getWidth(), workSpace.getHeight(), BufferedImage.TYPE_INT_RGB);
+
+        g2d =(Graphics2D) workSpace.getGraphics();
+        g2d = bufferedImage.createGraphics();
+        g2d.setColor(Agrupar.getBackground());
+        g2d.fillRect(0, 0, workSpace.getWidth(), workSpace.getHeight());
+        
+        if(linhaAntiga != null){
+            bufferedImage.setData(linhaAntiga);
+        }
+        ///////////
+        mousePosAnterior = evt.getPoint();
+    }//GEN-LAST:event_mousePosAnterior
+
+    private void tracarLinha(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tracarLinha
+        if(rabiscarJTB.isSelected()){
+            workSpace.getGraphics().drawLine((int)mousePosAnterior.getX(),(int) mousePosAnterior.getY(), evt.getX(), evt.getY());
+
+            g2d.setColor(Color.black);
+            g2d.drawLine((int)mousePosAnterior.getX(),(int) mousePosAnterior.getY(), evt.getX(), evt.getY());
+
+            mousePosAnterior = evt.getPoint();
+        }
+    }//GEN-LAST:event_tracarLinha
+
+    private void rabiscar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rabiscar
+        if(rabiscarJTB.isSelected()){
+            RabiscarJL.setLocation(0,0);
+            RabiscarJL.setIcon(new ImageIcon(bufferedImage));
+
+            RabiscarJL.setSize(RabiscarJL.getPreferredSize());
+        }
+    }//GEN-LAST:event_rabiscar
+
+    private void apagarRabisco(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_apagarRabisco
+        bufferedImage = new BufferedImage(workSpace.getWidth(), workSpace.getHeight(), BufferedImage.TYPE_INT_RGB);
+
+        g2d =(Graphics2D) workSpace.getGraphics();
+        g2d = bufferedImage.createGraphics();
+        g2d.setColor(Agrupar.getBackground());
+        g2d.fillRect(0, 0, workSpace.getWidth(), workSpace.getHeight());
+        
+        rabiscar(null);
+    }//GEN-LAST:event_apagarRabisco
+    
     private boolean mouseIsOverComponent(Point mouse, Component obj){
         if(mouse.getX() >= obj.getLocation().getX() && mouse.getX() < obj.getWidth()+obj.getLocation().getX()){
             if(mouse.getY() >= obj.getLocation().getY() && mouse.getY() < obj.getHeight()+obj.getLocation().getY()){
@@ -464,10 +576,14 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Agrupar;
     private javax.swing.JPanel Agrupar_SlideElementoJP;
     private javax.swing.JButton ArrayMenuJP;
     private javax.swing.JToolBar BarraFerramentaJTB;
+    private javax.swing.JButton CondicaoMenuJP;
+    private javax.swing.JButton LacoMenuJP;
     private javax.swing.JPanel Menu_Slide_ElementoJP;
+    private javax.swing.JLabel RabiscarJL;
     private javax.swing.JPanel SlideJP;
     private javax.swing.JPanel Slide_ElementoJP;
     private javax.swing.JButton SlidesJB;
@@ -484,29 +600,33 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JToggleButton btn_variavel;
     private javax.swing.JToggleButton btn_while;
     private javax.swing.ButtonGroup ferramentasGrupo;
-    private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler11;
     private javax.swing.Box.Filler filler12;
     private javax.swing.Box.Filler filler13;
     private javax.swing.Box.Filler filler14;
     private javax.swing.Box.Filler filler15;
-    private javax.swing.Box.Filler filler2;
-    private javax.swing.Box.Filler filler3;
-    private javax.swing.Box.Filler filler4;
-    private javax.swing.Box.Filler filler5;
-    private javax.swing.Box.Filler filler6;
-    private javax.swing.Box.Filler filler7;
+    private javax.swing.Box.Filler filler16;
+    private javax.swing.Box.Filler filler17;
+    private javax.swing.Box.Filler filler18;
+    private javax.swing.Box.Filler filler19;
+    private javax.swing.Box.Filler filler20;
+    private javax.swing.Box.Filler filler21;
+    private javax.swing.Box.Filler filler22;
+    private javax.swing.Box.Filler filler23;
+    private javax.swing.Box.Filler filler24;
+    private javax.swing.Box.Filler filler25;
+    private javax.swing.Box.Filler filler26;
     private javax.swing.Box.Filler filler8;
-    private javax.swing.Box.Filler filler9;
     private javax.swing.JButton jButton1;
     private javax.swing.JToggleButton jButton12;
     private javax.swing.JButton jButton2;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton limparRabiscoJTB;
     private menuComponents.MenuArrayJP menuArrayJP1;
     private javax.swing.JPanel menuAuxiliar;
     private menuComponents.MenuVariavelJP menuVariavelJP;
+    private javax.swing.JToggleButton rabiscarJTB;
     private javax.swing.JLayeredPane workSpace;
     // End of variables declaration//GEN-END:variables
 }

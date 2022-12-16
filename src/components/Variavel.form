@@ -62,8 +62,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="ValorJTF">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="aleatorioParadeletar"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="criarCopiaValor"/>
       </Events>
     </Component>
     <Component class="javax.swing.Box$Filler" name="filler3">
