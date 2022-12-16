@@ -1,14 +1,22 @@
 package components;
 
 import java.awt.GridLayout;
+import javax.swing.JButton;
 import javax.swing.JTextField;
-import telas.principal;
+import menuComponents.MenuArrayJP;
+
 
 public class ArrayJP extends Elemento {
-   
-    public ArrayJP() {
+    private MenuArrayJP menuArray;
+    private JButton arrayMenuJP;
+    
+    private String[] valores;
+    public ArrayJP(MenuArrayJP menuArray, JButton arrayMenuJP) {
         super();
         initComponents();
+        
+        this.menuArray = menuArray;
+        this.arrayMenuJP = arrayMenuJP;
     }
 
     
@@ -31,6 +39,11 @@ public class ArrayJP extends Elemento {
         setMinimumSize(new java.awt.Dimension(250, 50));
         setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(250, 50));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                alterarMenu(evt);
+            }
+        });
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
         add(filler1);
 
@@ -66,11 +79,6 @@ public class ArrayJP extends Elemento {
         ValorJTF.setMargin(new java.awt.Insets(4, 10, 4, 10));
         ValorJTF.setMinimumSize(new java.awt.Dimension(22, 22));
         ValorJTF.setPreferredSize(new java.awt.Dimension(22, 22));
-        ValorJTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ValorJTFActionPerformed(evt);
-            }
-        });
         AgruparJP.add(ValorJTF);
 
         add(AgruparJP);
@@ -113,9 +121,10 @@ public class ArrayJP extends Elemento {
         repaint();
     }//GEN-LAST:event_adicionarLinha
 
-    private void ValorJTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorJTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValorJTFActionPerformed
+    private void alterarMenu(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alterarMenu
+        arrayMenuJP.setVisible(true);
+        menuArray.alterarMenu(this, NomeJL.getText(), valores);
+    }//GEN-LAST:event_alterarMenu
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,9 +6,10 @@ import menuComponents.MenuVariavelJP;
 import telas.principal;
 
 public class Variavel extends Elemento {
-    public static Variavel selecionado;
     private MenuVariavelJP menuVar;
     private JButton VariavelMenuJP;
+    
+    
     public Variavel(MenuVariavelJP menuVar, JButton VariavelMenuJP) {
         super();
         initComponents();
@@ -69,7 +70,6 @@ public class Variavel extends Elemento {
     }//GEN-LAST:event_criarCopiaValor
 
     private void alterarMenu(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alterarMenu
-        //selecionado = this;
         VariavelMenuJP.setVisible(true);
         menuVar.alterarMenu(this, NomeJL.getText(), ValorJTF.getText());
     }//GEN-LAST:event_alterarMenu
@@ -82,6 +82,8 @@ public class Variavel extends Elemento {
     public void alterarValor(String valor){
         ValorJTF.setText(valor);
     }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IconJL;
     private javax.swing.JLabel NomeJL;
