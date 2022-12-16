@@ -17,10 +17,8 @@ import java.awt.image.Raster;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
-/**
- *
- * @author macaurycarvalho
- */
+
+
 public class principal extends javax.swing.JFrame {
     private enum elemento{VARIAVEL,ARRAY};
     private JLabel elemTransparente;
@@ -69,8 +67,11 @@ public class principal extends javax.swing.JFrame {
         btn_ajustes = new javax.swing.JButton();
         filler26 = new javax.swing.Box.Filler(new java.awt.Dimension(15, 15), new java.awt.Dimension(15, 15), new java.awt.Dimension(15, 15));
         Agrupar = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         workSpace = new javax.swing.JLayeredPane();
         RabiscarJL = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         menuAuxiliar = new javax.swing.JPanel();
         BarraFerramentaJTB = new javax.swing.JToolBar();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
@@ -98,7 +99,7 @@ public class principal extends javax.swing.JFrame {
         filler17 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
         btn_novo_slide = new javax.swing.JButton();
         filler16 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        menuArrayJP1 = new menuComponents.MenuArrayJP();
+        menuArrayJP = new menuComponents.MenuArrayJP();
         menuVariavelJP = new menuComponents.MenuVariavelJP();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -198,11 +199,12 @@ public class principal extends javax.swing.JFrame {
 
         Agrupar.setLayout(new java.awt.BorderLayout());
 
+        jScrollPane1.setBorder(null);
+
         workSpace.setBackground(new java.awt.Color(255, 255, 255));
         workSpace.setAlignmentX(0.0F);
         workSpace.setAlignmentY(0.0F);
-        workSpace.setOpaque(true);
-        workSpace.setPreferredSize(null);
+        workSpace.setPreferredSize(new java.awt.Dimension(400, 400));
         workSpace.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 tracarLinha(evt);
@@ -230,9 +232,29 @@ public class principal extends javax.swing.JFrame {
             }
         });
         workSpace.add(RabiscarJL);
-        RabiscarJL.setBounds(30, 60, 130, 120);
+        RabiscarJL.setBounds(90, 140, 130, 120);
 
-        Agrupar.add(workSpace, java.awt.BorderLayout.PAGE_START);
+        jButton3.setText("Botão normal");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tenhoQueDeletarDepoisBt(evt);
+            }
+        });
+        workSpace.add(jButton3);
+        jButton3.setBounds(160, 90, 90, 23);
+
+        jToggleButton1.setText("Toggle Botão");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tenhoqueDeletar(evt);
+            }
+        });
+        workSpace.add(jToggleButton1);
+        jToggleButton1.setBounds(290, 90, 100, 23);
+
+        jScrollPane1.setViewportView(workSpace);
+
+        Agrupar.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         menuAuxiliar.setPreferredSize(new java.awt.Dimension(530, 250));
         menuAuxiliar.setLayout(new java.awt.BorderLayout());
@@ -283,11 +305,6 @@ public class principal extends javax.swing.JFrame {
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                zoomIn(evt);
-            }
-        });
         BarraFerramentaJTB.add(jButton1);
         BarraFerramentaJTB.add(filler15);
 
@@ -407,7 +424,7 @@ public class principal extends javax.swing.JFrame {
         SlideJP.add(filler16);
 
         Agrupar_SlideElementoJP.add(SlideJP, "SLIDE");
-        Agrupar_SlideElementoJP.add(menuArrayJP1, "ARRAY");
+        Agrupar_SlideElementoJP.add(menuArrayJP, "ARRAY");
         Agrupar_SlideElementoJP.add(menuVariavelJP, "VARIAVEL");
 
         Slide_ElementoJP.add(Agrupar_SlideElementoJP);
@@ -487,7 +504,7 @@ public class principal extends javax.swing.JFrame {
             //v1.setLocation(evt.getX()-v1.getWidth()/2, evt.getY()-v1.getHeight()/2-MENU_WINDOWS);
         }
         else if(btn_array.isSelected()){
-            ArrayJP a1 = new ArrayJP();
+            ArrayJP a1 = new ArrayJP(menuArrayJP, ArrayMenuJP);
             workSpace.add(a1);
             a1.setSize(a1.getPreferredSize());
             a1.setLocation(evt.getPoint());
@@ -557,6 +574,22 @@ public class principal extends javax.swing.JFrame {
         
         rabiscar(null);
     }//GEN-LAST:event_apagarRabisco
+
+    private void tenhoQueDeletarDepoisBt(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tenhoQueDeletarDepoisBt
+        VariavelJP v1 = new VariavelJP(menuVariavelJP,VariavelMenuJP);
+        workSpace.add(v1, JLayeredPane.PALETTE_LAYER);
+        v1.setSize(v1.getPreferredSize());
+        v1.setLocation(evt.getX(), evt.getY()+50);
+    }//GEN-LAST:event_tenhoQueDeletarDepoisBt
+
+    private void tenhoqueDeletar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tenhoqueDeletar
+        if(jToggleButton1.isSelected()){
+            VariavelJP v1 = new VariavelJP(menuVariavelJP,VariavelMenuJP);
+            workSpace.add(v1, JLayeredPane.PALETTE_LAYER);
+            v1.setSize(v1.getPreferredSize());
+            v1.setLocation(evt.getX(), evt.getY()+50);
+        }
+    }//GEN-LAST:event_tenhoqueDeletar
     
     private boolean mouseIsOverComponent(Point mouse, Component obj){
         if(mouse.getX() >= obj.getLocation().getX() && mouse.getX() < obj.getWidth()+obj.getLocation().getX()){
@@ -621,8 +654,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JToggleButton jButton12;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton limparRabiscoJTB;
-    private menuComponents.MenuArrayJP menuArrayJP1;
+    private menuComponents.MenuArrayJP menuArrayJP;
     private javax.swing.JPanel menuAuxiliar;
     private menuComponents.MenuVariavelJP menuVariavelJP;
     private javax.swing.JToggleButton rabiscarJTB;
