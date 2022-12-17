@@ -28,35 +28,45 @@ public class CondicaoJP extends Elemento {
     private void initComponents() {
 
         Agrupar = new javax.swing.JPanel();
-        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
+        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         jLabel1 = new javax.swing.JLabel();
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
+        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         AgruparCondicaoJP = new javax.swing.JPanel();
         Valor1JTF = new javax.swing.JTextField();
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
+        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         CompararJCB = new javax.swing.JComboBox<>();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
+        filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         Valor2JTF = new javax.swing.JTextField();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(0, 0));
+        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
+        setPreferredSize(new java.awt.Dimension(300, 50));
         setLayout(new java.awt.BorderLayout());
 
+        Agrupar.setBackground(getBackground());
         Agrupar.setLayout(new javax.swing.BoxLayout(Agrupar, javax.swing.BoxLayout.LINE_AXIS));
-        Agrupar.add(filler5);
+        Agrupar.add(filler7);
 
         jLabel1.setText("IF");
         Agrupar.add(jLabel1);
-        Agrupar.add(filler4);
+        Agrupar.add(filler6);
 
+        AgruparCondicaoJP.setBackground(getBackground());
         AgruparCondicaoJP.setLayout(new javax.swing.BoxLayout(AgruparCondicaoJP, javax.swing.BoxLayout.LINE_AXIS));
+
+        Valor1JTF.setEditable(false);
+        Valor1JTF.setBorder(null);
         AgruparCondicaoJP.add(Valor1JTF);
-        AgruparCondicaoJP.add(filler3);
+        AgruparCondicaoJP.add(filler8);
 
         CompararJCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "==", "!=", ">=", "<=", ">", "<" }));
+        CompararJCB.setBorder(null);
         AgruparCondicaoJP.add(CompararJCB);
-        AgruparCondicaoJP.add(filler1);
+        AgruparCondicaoJP.add(filler10);
+
+        Valor2JTF.setEditable(false);
+        Valor2JTF.setBorder(null);
         AgruparCondicaoJP.add(Valor2JTF);
-        AgruparCondicaoJP.add(filler2);
+        AgruparCondicaoJP.add(filler9);
 
         Agrupar.add(AgruparCondicaoJP);
 
@@ -70,11 +80,11 @@ public class CondicaoJP extends Elemento {
     private javax.swing.JComboBox<String> CompararJCB;
     private javax.swing.JTextField Valor1JTF;
     private javax.swing.JTextField Valor2JTF;
-    private javax.swing.Box.Filler filler1;
-    private javax.swing.Box.Filler filler2;
-    private javax.swing.Box.Filler filler3;
-    private javax.swing.Box.Filler filler4;
-    private javax.swing.Box.Filler filler5;
+    private javax.swing.Box.Filler filler10;
+    private javax.swing.Box.Filler filler6;
+    private javax.swing.Box.Filler filler7;
+    private javax.swing.Box.Filler filler8;
+    private javax.swing.Box.Filler filler9;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

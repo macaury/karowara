@@ -29,25 +29,39 @@ public class MenuVariavelJP extends javax.swing.JPanel {
     private void initComponents() {
 
         tipo = new javax.swing.ButtonGroup();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         NomeJTF = new javax.swing.JTextField();
-        ValorJTF = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        ValorJTF = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        intJRB = new javax.swing.JRadioButton();
+        floatJRB = new javax.swing.JRadioButton();
+        charJRB = new javax.swing.JRadioButton();
+        anyJRB = new javax.swing.JRadioButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(244, 242, 242));
+        setLayout(new java.awt.GridLayout(1, 2));
+
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
         jLabel1.setText("Nome");
+        jPanel1.add(jLabel1);
 
         NomeJTF.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 atualizarVariavel(evt);
             }
         });
+        jPanel1.add(NomeJTF);
+
+        jLabel2.setText("Valor");
+        jPanel1.add(jLabel2);
 
         ValorJTF.setPreferredSize(new java.awt.Dimension(92, 22));
         ValorJTF.addCaretListener(new javax.swing.event.CaretListener() {
@@ -55,69 +69,47 @@ public class MenuVariavelJP extends javax.swing.JPanel {
                 atualizarVariavel(evt);
             }
         });
+        jPanel1.add(ValorJTF);
 
-        jLabel2.setText("Valor");
+        jPanel3.add(jPanel1);
+
+        jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
 
         jLabel3.setText("Tipo");
+        jPanel2.add(jLabel3);
 
-        tipo.add(jRadioButton1);
-        jRadioButton1.setText("int");
+        tipo.add(intJRB);
+        intJRB.setText("int");
+        jPanel2.add(intJRB);
 
-        tipo.add(jRadioButton2);
-        jRadioButton2.setText("float");
+        tipo.add(floatJRB);
+        floatJRB.setText("float");
+        jPanel2.add(floatJRB);
 
-        tipo.add(jRadioButton3);
-        jRadioButton3.setText("char");
+        tipo.add(charJRB);
+        charJRB.setText("char");
+        jPanel2.add(charJRB);
 
-        tipo.add(jRadioButton4);
-        jRadioButton4.setText("any");
+        tipo.add(anyJRB);
+        anyJRB.setText("any");
+        jPanel2.add(anyJRB);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(NomeJTF, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(ValorJTF, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(128, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ValorJTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(NomeJTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)))
-                .addGap(18, 24, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
-                .addContainerGap(227, Short.MAX_VALUE))
-        );
+        jPanel3.add(jPanel2);
+
+        add(jPanel3);
+
+        jLabel4.setText("Valor aleatório");
+        jPanel4.add(jLabel4);
+
+        jButton1.setText("Gerar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                gerarAleatorio(evt);
+            }
+        });
+        jPanel4.add(jButton1);
+
+        add(jPanel4);
     }// </editor-fold>//GEN-END:initComponents
 
     private void atualizarVariavel(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_atualizarVariavel
@@ -125,13 +117,27 @@ public class MenuVariavelJP extends javax.swing.JPanel {
             var.alterarVariavel(NomeJTF.getText(), ValorJTF.getText());
         }
     }//GEN-LAST:event_atualizarVariavel
+
+    private void gerarAleatorio(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gerarAleatorio
+
+        if(intJRB.isSelected()){
+            ValorJTF.setText(String.valueOf((int)(Math.random() * 200 ) - 100));
+        }else if(floatJRB.isSelected()){
+            ValorJTF.setText(String.valueOf((float)(Math.random() * 200 ) - 100));
+        }else if(charJRB.isSelected()){
+            int max = 'z';
+            int min = 'A';
+            int unicode = (int)(Math.random() * (max-min)) + min;
+            
+            char valor = (char) unicode;
+            ValorJTF.setText(String.valueOf(valor));
+        }
+    }//GEN-LAST:event_gerarAleatorio
     
     public void alterarMenu(VariavelJP nova, String nome, String valor) {
         var = nova;
         NomeJTF.setText(nome);
         ValorJTF.setText(valor);
-        
-        
     }
     
 
@@ -139,13 +145,19 @@ public class MenuVariavelJP extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NomeJTF;
     private javax.swing.JTextField ValorJTF;
+    private javax.swing.JRadioButton anyJRB;
+    private javax.swing.JRadioButton charJRB;
+    private javax.swing.JRadioButton floatJRB;
+    private javax.swing.JRadioButton intJRB;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.ButtonGroup tipo;
     // End of variables declaration//GEN-END:variables
 

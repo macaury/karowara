@@ -1,8 +1,11 @@
 package components;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 import menuComponents.MenuArrayJP;
 
 
@@ -11,6 +14,7 @@ public class ArrayJP extends Elemento {
     private JButton arrayMenuJP;
     
     private String[] valores;
+    
     public ArrayJP(MenuArrayJP menuArray, JButton arrayMenuJP) {
         super();
         initComponents();
@@ -19,10 +23,7 @@ public class ArrayJP extends Elemento {
         this.arrayMenuJP = arrayMenuJP;
     }
 
-    public ArrayJP() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -30,6 +31,7 @@ public class ArrayJP extends Elemento {
 
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(5, 32767));
         IconJL = new javax.swing.JLabel();
+        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(5, 32767));
         NomeJL = new javax.swing.JLabel();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(5, 32767));
         AdicionarLinhaJB = new javax.swing.JButton();
@@ -44,7 +46,7 @@ public class ArrayJP extends Elemento {
         setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(250, 50));
         addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
                 alterarMenu(evt);
             }
         });
@@ -54,13 +56,15 @@ public class ArrayJP extends Elemento {
         IconJL.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         IconJL.setText("ARRAY");
         add(IconJL);
+        add(filler5);
         add(NomeJL);
         add(filler4);
 
         AdicionarLinhaJB.setText("+L");
+        AdicionarLinhaJB.setBorder(null);
         AdicionarLinhaJB.setPreferredSize(new java.awt.Dimension(50, 23));
         AdicionarLinhaJB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
                 adicionarLinha(evt);
             }
         });
@@ -68,9 +72,10 @@ public class ArrayJP extends Elemento {
         add(filler3);
 
         AdicionarColunaJB1.setText("+C");
+        AdicionarColunaJB1.setBorder(null);
         AdicionarColunaJB1.setPreferredSize(new java.awt.Dimension(50, 23));
         AdicionarColunaJB1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
                 adicionarColuna(evt);
             }
         });
@@ -79,7 +84,8 @@ public class ArrayJP extends Elemento {
 
         AgruparJP.setLayout(new java.awt.GridLayout(1, 1));
 
-        ValorJTF.setBackground(new java.awt.Color(242, 242, 242));
+        ValorJTF.setEditable(false);
+        ValorJTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         ValorJTF.setMargin(new java.awt.Insets(4, 10, 4, 10));
         ValorJTF.setMinimumSize(new java.awt.Dimension(22, 22));
         ValorJTF.setPreferredSize(new java.awt.Dimension(22, 22));
@@ -87,14 +93,37 @@ public class ArrayJP extends Elemento {
 
         add(AgruparJP);
     }// </editor-fold>//GEN-END:initComponents
- 
+    
+    public int getLinha(){
+        return ((GridLayout)AgruparJP.getLayout()).getRows();
+    }
+    
+    public int getColuna(){
+        return ((GridLayout)AgruparJP.getLayout()).getColumns();
+    }
+    
+    public void alterarArray(String nome, String[]valores){
+        NomeJL.setText(nome);
+
+        Component[] caixas = AgruparJP.getComponents();
+        int i = 0;
+        for (Component comp : caixas) {
+            ((JTextField)comp).setText(valores[i++]);
+        }
+       
+    }
+    
     private void adicionarColuna(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarColuna
         GridLayout layoutAgruparJP = (GridLayout)AgruparJP.getLayout();
         
-        int novoWidth = 10;
+        int novoWidth = 0;
         for(int i = 0; i < layoutAgruparJP.getRows(); i++){
-            AgruparJP.add(new JTextField());
-
+            JTextField novoValor = new JTextField();
+            AgruparJP.add(novoValor);
+            
+            novoValor.setEditable(false);
+            novoValor.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(102,102,102)));
+            
             novoWidth = this.getWidth();
             novoWidth += ValorJTF.getWidth();
         }
@@ -110,10 +139,14 @@ public class ArrayJP extends Elemento {
     private void adicionarLinha(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarLinha
         GridLayout layoutAgruparJP = (GridLayout)AgruparJP.getLayout();
         
-        int novoHeight = 4;
+        int novoHeight = 0;
         for(int i = 0; i < layoutAgruparJP.getColumns(); i++){
-            AgruparJP.add(new JTextField());
-
+            JTextField novoValor = new JTextField();
+            AgruparJP.add(novoValor);
+            
+            novoValor.setEditable(false);
+            novoValor.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(102,102,102)));
+            
             novoHeight = this.getHeight();
             novoHeight += ValorJTF.getHeight();
         }
@@ -142,5 +175,6 @@ public class ArrayJP extends Elemento {
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
+    private javax.swing.Box.Filler filler5;
     // End of variables declaration//GEN-END:variables
 }
