@@ -250,7 +250,7 @@ public class principal extends javax.swing.JFrame {
             }
         });
         workSpace.add(jToggleButton1);
-        jToggleButton1.setBounds(290, 90, 100, 23);
+        jToggleButton1.setBounds(290, 90, 106, 23);
 
         jScrollPane1.setViewportView(workSpace);
 
@@ -436,6 +436,7 @@ public class principal extends javax.swing.JFrame {
         getContentPane().add(Agrupar, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void mudarMenuParaLacoMenuJP(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mudarMenuParaLacoMenuJP

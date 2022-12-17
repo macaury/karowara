@@ -149,7 +149,6 @@ public class OpcoesAcessibilidade extends javax.swing.JPanel {
         };
         if (!teste.isSelected()){
             teste.setText("Desativado");
-            teste.setBackground(new java.awt.Color(255, 255, 255));
             teste.setForeground(new java.awt.Color(0, 0, 0));
         };
     }//GEN-LAST:event_testeActionPerformed
