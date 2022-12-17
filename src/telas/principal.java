@@ -27,6 +27,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(testePrincipal, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void zoomIn(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_zoomIn

@@ -4,6 +4,8 @@
  */
 package ajustesComponents;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author macaurycarvalho
@@ -26,57 +28,122 @@ public class teste extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        teste = new javax.swing.JToggleButton();
+        jPanel1 = new javax.swing.JPanel();
+        paneSup = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
+        jToggleButton4 = new javax.swing.JToggleButton();
+        paneINF = new javax.swing.JPanel();
+        azul = new javax.swing.JPanel();
+        verde = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        teste.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        teste.setText("Desativado");
-        teste.setAlignmentX(0.5F);
-        teste.setIconTextGap(10);
-        teste.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        paneSup.setBackground(new java.awt.Color(242, 242, 202));
+
+        jToolBar1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jToolBar1.setRollover(true);
+        jToolBar1.setOpaque(false);
+        jToolBar1.setPreferredSize(new java.awt.Dimension(100, 300));
+        jToolBar1.setRequestFocusEnabled(false);
+
+        jToggleButton3.setText("teste_azul");
+        jToggleButton3.setAlignmentX(0.5F);
+        jToggleButton3.setFocusable(false);
+        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testeActionPerformed(evt);
+                jToggleButton3ActionPerformed(evt);
             }
         });
+        jToolBar1.add(jToggleButton3);
+        jToolBar1.add(filler1);
+
+        jToggleButton4.setText("teste_verde");
+        jToggleButton4.setAlignmentX(0.5F);
+        jToggleButton4.setFocusable(false);
+        jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jToggleButton4);
+
+        paneSup.add(jToolBar1);
+
+        jPanel1.add(paneSup, java.awt.BorderLayout.LINE_START);
+
+        paneINF.setBackground(new java.awt.Color(242, 202, 242));
+        paneINF.setLayout(new java.awt.CardLayout());
+
+        azul.setBackground(new java.awt.Color(100, 200, 255));
+
+        javax.swing.GroupLayout azulLayout = new javax.swing.GroupLayout(azul);
+        azul.setLayout(azulLayout);
+        azulLayout.setHorizontalGroup(
+            azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 563, Short.MAX_VALUE)
+        );
+        azulLayout.setVerticalGroup(
+            azulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        paneINF.add(azul, "card2");
+
+        verde.setBackground(new java.awt.Color(102, 242, 100));
+
+        javax.swing.GroupLayout verdeLayout = new javax.swing.GroupLayout(verde);
+        verde.setLayout(verdeLayout);
+        verdeLayout.setHorizontalGroup(
+            verdeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 563, Short.MAX_VALUE)
+        );
+        verdeLayout.setVerticalGroup(
+            verdeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        paneINF.add(verde, "card3");
+
+        jPanel1.add(paneINF, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(350, Short.MAX_VALUE)
-                .addComponent(teste)
-                .addGap(129, 129, 129))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(215, 215, 215)
-                .addComponent(teste)
-                .addContainerGap(230, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("empty-statement")
-    private void testeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testeActionPerformed
-       if (teste.isSelected()){
-        teste.setText("Ativado");
-        teste.setBorderPainted(rootPaneCheckingEnabled);
-        teste.setForeground(new java.awt.Color(0, 200, 0));
-  
-       };
-       
-       if (!teste.isSelected()){
-        teste.setText("Desativado");
-          teste.setBackground(new java.awt.Color(255, 255, 255));
-         teste.setForeground(new java.awt.Color(0, 0, 0));
-       };
-       
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        paneINF.removeAll();
+        paneINF.add(azul);
+        paneINF.repaint();
+        paneINF.revalidate();
+      
         
-    }//GEN-LAST:event_testeActionPerformed
+        
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+       paneINF.removeAll();
+        paneINF.add(verde);
+        paneINF.repaint();
+        paneINF.revalidate();
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,7 +181,15 @@ public class teste extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton teste;
+    private javax.swing.JPanel azul;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JPanel paneINF;
+    private javax.swing.JPanel paneSup;
+    private javax.swing.JPanel verde;
     // End of variables declaration//GEN-END:variables
 
     
