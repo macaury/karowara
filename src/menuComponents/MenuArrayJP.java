@@ -102,6 +102,7 @@ public class MenuArrayJP extends javax.swing.JPanel {
                 valores[i] = (String.valueOf((int)(Math.random() * 200 ) - 100));
             }else if(floatJRB.isSelected()){
                 valores[i] = (String.valueOf((float)(Math.random() * 200 ) - 100));
+                valores[i] = valores[i].substring(0, 5);
             }else if(charJRB.isSelected()){
                 int max = 'z';
                 int min = 'A';

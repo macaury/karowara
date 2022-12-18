@@ -119,7 +119,7 @@ public class MenuVariavelJP extends javax.swing.JPanel {
         if(intJRB.isSelected()){
             ValorJTF.setText(String.valueOf((int)(Math.random() * 200 ) - 100));
         }else if(floatJRB.isSelected()){
-            ValorJTF.setText(String.valueOf((float)(Math.random() * 200 ) - 100));
+            ValorJTF.setText((String.valueOf((float)(Math.random() * 200 ) - 100)).substring(0, 5));
         }else if(charJRB.isSelected()){
             int max = 'z';
             int min = 'A';

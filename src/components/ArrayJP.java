@@ -205,30 +205,14 @@ public class ArrayJP extends Elemento {
         pos.y += evt.getY();
         
         String valor = ((JTextField)evt.getComponent()).getText();
-        ValorJP teste = new ValorJP(valor);
-        this.getParent().add(teste, JLayeredPane.MODAL_LAYER);
-        teste.setSize(teste.getPreferredSize());
-        teste.setLocation(pos);
-        revalidate();
-        
-        //System.out.println(pos + "    " + evt.getComponent().getLocation());
-        //System.out.println(pos + "    " + evt.getComponent().getLocation());
-        
-        /*if(!ValorJTF.getText().equals("")){
-            ValorJP teste = new ValorJP(ValorJTF.getText());
+        if(!valor.equals("")){
+            ValorJP teste = new ValorJP(valor);
             this.getParent().add(teste, JLayeredPane.MODAL_LAYER);
-
             teste.setSize(teste.getPreferredSize());
-
-            Point pos = new Point();
-            pos.x = evt.getX()+ValorJTF.getX()+this.getX()+Agrupar.getX();
-            pos.y = evt.getY()+this.getY();
-            pos.x -= teste.getPreferredSize().getWidth()/2;
-            pos.y -= teste.getPreferredSize().getHeight()/2;
             teste.setLocation(pos);
-            //teste.setBounds(100, 100, 100, 100);
             revalidate();
-        }*/
+        }
+        
     }  
     
     private class MouseParaValorExterno extends MouseAdapter{

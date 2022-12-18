@@ -56,6 +56,11 @@ public class ValorJP extends Elemento {
                     array.alterarValor(ValorJL.getText(), this.getLocation());
                     this.getParent().remove(this);
                     revalidate();
+                }else if(componente instanceof CondicaoJP){
+                    CondicaoJP condicao = (CondicaoJP) componente;
+                    condicao.alterarValor(ValorJL.getText(), this.getLocation());
+                    this.getParent().remove(this);
+                    revalidate();
                 }
             }
         }

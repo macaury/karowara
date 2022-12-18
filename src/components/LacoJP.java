@@ -4,15 +4,16 @@
  */
 package components;
 
+import java.awt.Component;
+
 /**
  *
  * @author GABRIEL
  */
 public class LacoJP extends Elemento {
 
-    /**
-     * Creates new form LacoJP
-     */
+    private boolean permitir = true;
+    
     public LacoJP() {
         super();
         initComponents();
@@ -33,7 +34,7 @@ public class LacoJP extends Elemento {
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         jTextField1 = new javax.swing.JTextField();
 
-        setPreferredSize(new java.awt.Dimension(200, 50));
+        setPreferredSize(new java.awt.Dimension(200, 75));
         setLayout(new java.awt.BorderLayout());
 
         AgruparJP.setBackground(getBackground());
@@ -51,6 +52,20 @@ public class LacoJP extends Elemento {
         add(AgruparJP, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void adicionarCondicao(Component cond){
+        if(permitir){
+            int novoWidht = this.getSize().width;
+            novoWidht -= jTextField1.getWidth();
+            novoWidht += cond.getWidth();
+            
+            AgruparJP.remove(jTextField1);
+            AgruparJP.add(cond);
+            this.setSize(novoWidht,this.getHeight());
+            permitir = false;
+            
+            revalidate();
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AgruparJP;
