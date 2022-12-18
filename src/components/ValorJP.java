@@ -6,7 +6,7 @@ package components;
 
 import java.awt.Component;
 import java.awt.Point;
-import telas.principal;
+import telas.Principal;
 
 /**
  *
@@ -54,6 +54,8 @@ public class ValorJP extends Elemento {
                         VariavelJP var = (VariavelJP) componente;
                         var.alterarValor(ValorJL.getText());
                         this.getParent().remove(this);
+                        revalidate();
+                        
                     }
                 }
             }

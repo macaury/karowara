@@ -9,7 +9,7 @@ import java.awt.Point;
 import java.awt.color.ColorSpace;
 import javax.swing.JLayeredPane;
 import javax.swing.border.TitledBorder;
-import telas.principal;
+import telas.Principal;
 
 /**
  *
@@ -54,9 +54,6 @@ public class Elemento extends javax.swing.JPanel {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MousePosToMove(evt);
             }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                formMouseReleased(evt);
-            }
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -84,17 +81,14 @@ public class Elemento extends javax.swing.JPanel {
         mouseInitPosClick = evt.getPoint();
     }//GEN-LAST:event_MousePosToMove
 
-    private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
-    }//GEN-LAST:event_formMouseReleased
-
     private void sobrepor(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sobrepor
-        JLayeredPane camada = (JLayeredPane) this.getParent();
+        /*JLayeredPane camada = (JLayeredPane) this.getParent();
         
         if(JLayeredPane.getLayer(this) == JLayeredPane.DRAG_LAYER){
             camada.setLayer(this, JLayeredPane.PALETTE_LAYER);
         }else{
             camada.setLayer(this, JLayeredPane.DRAG_LAYER);
-        }
+        }*/
         
     }//GEN-LAST:event_sobrepor
 
