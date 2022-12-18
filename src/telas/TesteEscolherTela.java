@@ -4,7 +4,7 @@
  */
 package telas;
 
-import ajustesComponents.teste;
+
 
 /**
  *
@@ -85,9 +85,7 @@ public class TesteEscolherTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        Principal teste= new Principal();
         //teste.pack();
-        teste.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked

@@ -44,7 +44,7 @@ public class ArrayJP extends Elemento {
         setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         setMinimumSize(new java.awt.Dimension(250, 50));
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(250, 50));
+        setPreferredSize(new java.awt.Dimension(250, 75));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 alterarMenu(evt);
@@ -54,9 +54,11 @@ public class ArrayJP extends Elemento {
         add(filler1);
 
         IconJL.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        IconJL.setText("ARRAY");
+        IconJL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/grande/bloco array.png"))); // NOI18N
         add(IconJL);
         add(filler5);
+
+        NomeJL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         add(NomeJL);
         add(filler4);
 
@@ -85,6 +87,7 @@ public class ArrayJP extends Elemento {
         AgruparJP.setLayout(new java.awt.GridLayout(1, 1));
 
         ValorJTF.setEditable(false);
+        ValorJTF.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         ValorJTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         ValorJTF.setMargin(new java.awt.Insets(4, 10, 4, 10));
         ValorJTF.setMinimumSize(new java.awt.Dimension(22, 22));

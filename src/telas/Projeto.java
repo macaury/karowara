@@ -226,7 +226,7 @@ public class Projeto extends javax.swing.JPanel {
             }
         });
         workSpace.add(RabiscarJL);
-        RabiscarJL.setBounds(100, 90, 130, 120);
+        RabiscarJL.setBounds(120, 190, 130, 120);
 
         jScrollPane1.setViewportView(workSpace);
 

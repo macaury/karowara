@@ -32,7 +32,6 @@ public class LacoJP extends Elemento {
         jLabel1 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         jTextField1 = new javax.swing.JTextField();
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
         setPreferredSize(new java.awt.Dimension(200, 50));
         setLayout(new java.awt.BorderLayout());
@@ -41,14 +40,13 @@ public class LacoJP extends Elemento {
         AgruparJP.setLayout(new javax.swing.BoxLayout(AgruparJP, javax.swing.BoxLayout.LINE_AXIS));
         AgruparJP.add(filler2);
 
-        jLabel1.setText("WHILE");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/grande/bloco while.png"))); // NOI18N
         AgruparJP.add(jLabel1);
         AgruparJP.add(filler1);
 
         jTextField1.setEditable(false);
         jTextField1.setBorder(null);
         AgruparJP.add(jTextField1);
-        AgruparJP.add(filler3);
 
         add(AgruparJP, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -58,7 +56,6 @@ public class LacoJP extends Elemento {
     private javax.swing.JPanel AgruparJP;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.Box.Filler filler3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

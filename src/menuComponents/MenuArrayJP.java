@@ -27,16 +27,16 @@ public class MenuArrayJP extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tipo = new javax.swing.ButtonGroup();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        NomeJTF = new javax.swing.JTextField();
+        NomeJCB = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         intJRB = new javax.swing.JRadioButton();
         floatJRB = new javax.swing.JRadioButton();
         charJRB = new javax.swing.JRadioButton();
-        anyJRB = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -48,12 +48,8 @@ public class MenuArrayJP extends javax.swing.JPanel {
         jLabel1.setText("Nome");
         jPanel1.add(jLabel1);
 
-        NomeJTF.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                NomeJTFatualizarVariavel(evt);
-            }
-        });
-        jPanel1.add(NomeJTF);
+        NomeJCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A ", "B", "C", "D", "E", "F ", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" }));
+        jPanel1.add(NomeJCB);
 
         jPanel3.add(jPanel1);
 
@@ -62,17 +58,17 @@ public class MenuArrayJP extends javax.swing.JPanel {
         jLabel3.setText("Tipo");
         jPanel2.add(jLabel3);
 
+        tipo.add(intJRB);
         intJRB.setText("int");
         jPanel2.add(intJRB);
 
+        tipo.add(floatJRB);
         floatJRB.setText("float");
         jPanel2.add(floatJRB);
 
+        tipo.add(charJRB);
         charJRB.setText("char");
         jPanel2.add(charJRB);
-
-        anyJRB.setText("any");
-        jPanel2.add(anyJRB);
 
         jPanel3.add(jPanel2);
 
@@ -92,12 +88,6 @@ public class MenuArrayJP extends javax.swing.JPanel {
         add(jPanel4);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NomeJTFatualizarVariavel(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_NomeJTFatualizarVariavel
-        if(array != null){
-            array.alterarArray(NomeJTF.getText(), valores);
-        }
-    }//GEN-LAST:event_NomeJTFatualizarVariavel
-
     private void jButton1gerarAleatorio(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1gerarAleatorio
 
         valores = new String[array.getLinha()*array.getColuna()];
@@ -116,17 +106,16 @@ public class MenuArrayJP extends javax.swing.JPanel {
                 valores[i] = (String.valueOf(valor));
             }
         }
-        array.alterarArray(NomeJTF.getText(), valores);
+        array.alterarArray(NomeJCB.getSelectedItem().toString(), valores);
     }//GEN-LAST:event_jButton1gerarAleatorio
 
     public void alterarMenu(ArrayJP array, String nome, String[] valores){
         this.array = array;
-        NomeJTF.setText(nome);
+        NomeJCB.setSelectedItem(nome);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField NomeJTF;
-    private javax.swing.JRadioButton anyJRB;
+    private javax.swing.JComboBox<String> NomeJCB;
     private javax.swing.JRadioButton charJRB;
     private javax.swing.JRadioButton floatJRB;
     private javax.swing.JRadioButton intJRB;
@@ -138,5 +127,6 @@ public class MenuArrayJP extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.ButtonGroup tipo;
     // End of variables declaration//GEN-END:variables
 }

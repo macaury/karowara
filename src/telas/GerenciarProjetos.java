@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Container;
 import java.util.Arrays;
+import javax.swing.JButton;
 
 /**
  *
@@ -49,10 +50,9 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         jPanel4 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
-        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
@@ -173,18 +173,21 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel2.add(jPanel5, java.awt.BorderLayout.NORTH);
 
         jPanel6.setLayout(new java.awt.BorderLayout());
+        jPanel6.add(filler9, java.awt.BorderLayout.NORTH);
 
         jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
         jButton6.setToolTipText("novo projeto");
         jButton6.setPreferredSize(new java.awt.Dimension(100, 100));
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                novoProjeto(evt);
+            }
+        });
         jPanel4.add(jButton6);
 
-        jScrollPane1.setViewportView(jPanel4);
-
-        jPanel6.add(jScrollPane1, java.awt.BorderLayout.CENTER);
-        jPanel6.add(filler9, java.awt.BorderLayout.NORTH);
+        jPanel6.add(jPanel4, java.awt.BorderLayout.CENTER);
         jPanel6.add(filler10, java.awt.BorderLayout.SOUTH);
         jPanel6.add(filler11, java.awt.BorderLayout.WEST);
         jPanel6.add(filler12, java.awt.BorderLayout.EAST);
@@ -217,6 +220,8 @@ public class GerenciarProjetos extends javax.swing.JPanel {
 
         cl.show(pai, novoProj.getName());
         
+        JButton novoBotao = new JButton();
+        novoBotao.setPreferredSize(jButton6.getPreferredSize());
     }//GEN-LAST:event_novoProjeto
 
 
@@ -245,6 +250,5 @@ public class GerenciarProjetos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

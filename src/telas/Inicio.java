@@ -29,10 +29,12 @@ public class Inicio extends javax.swing.JFrame {
         gerenciarProjetos = new telas.GerenciarProjetos();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1200, 800));
         getContentPane().setLayout(new java.awt.CardLayout());
         getContentPane().add(gerenciarProjetos, "inicio");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

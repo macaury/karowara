@@ -9,7 +9,6 @@ import java.awt.Point;
 import java.awt.color.ColorSpace;
 import javax.swing.JLayeredPane;
 import javax.swing.border.TitledBorder;
-import telas.Principal;
 
 /**
  *
