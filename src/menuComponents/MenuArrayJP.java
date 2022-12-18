@@ -49,6 +49,11 @@ public class MenuArrayJP extends javax.swing.JPanel {
         jPanel1.add(jLabel1);
 
         NomeJCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A ", "B", "C", "D", "E", "F ", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" }));
+        NomeJCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                mudarNomeArray(evt);
+            }
+        });
         jPanel1.add(NomeJCB);
 
         jPanel3.add(jPanel1);
@@ -108,6 +113,10 @@ public class MenuArrayJP extends javax.swing.JPanel {
         }
         array.alterarArray(NomeJCB.getSelectedItem().toString(), valores);
     }//GEN-LAST:event_jButton1gerarAleatorio
+
+    private void mudarNomeArray(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_mudarNomeArray
+        array.alterarNome(NomeJCB.getSelectedItem().toString());
+    }//GEN-LAST:event_mudarNomeArray
 
     public void alterarMenu(ArrayJP array, String nome, String[] valores){
         this.array = array;

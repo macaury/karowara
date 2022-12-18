@@ -102,6 +102,7 @@ public class VariavelJP extends Elemento {
         NomeJL.setText(nome);
         novoTamanho();
     }
+    
     private void novoTamanho(){
         int novoWeight = 0;
         

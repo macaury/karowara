@@ -55,7 +55,7 @@ public class MenuVariavelJP extends javax.swing.JPanel {
         NomeJCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A ", "B", "C", "D", "E", "F ", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" }));
         NomeJCB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                mudar(evt);
+                mudarNomeVariavel(evt);
             }
         });
         jPanel1.add(NomeJCB);
@@ -130,16 +130,14 @@ public class MenuVariavelJP extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_gerarAleatorio
 
-    private void mudar(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_mudar
+    private void mudarNomeVariavel(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_mudarNomeVariavel
         var.alterarNome(NomeJCB.getSelectedItem().toString());
-    }//GEN-LAST:event_mudar
+    }//GEN-LAST:event_mudarNomeVariavel
     
     public void alterarMenu(VariavelJP nova, String nome, String valor) {
         var = nova;
         NomeJCB.setSelectedItem(nome);
-        ValorJTF.setText(valor);
-
-        
+        ValorJTF.setText(valor); 
     }
     
 
