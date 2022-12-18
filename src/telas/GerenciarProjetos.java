@@ -7,7 +7,9 @@ package telas;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.PopupMenu;
 import java.util.Arrays;
+
 
 /**
  *
@@ -15,9 +17,9 @@ import java.util.Arrays;
  */
 public class GerenciarProjetos extends javax.swing.JPanel {
 
-    /**
-     * Creates new form GerenciarProjetos
-     */
+
+    
+    
     public GerenciarProjetos() {
         initComponents();
     }
@@ -37,13 +39,17 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 60), new java.awt.Dimension(0, 60), new java.awt.Dimension(32767, 60));
         jButton1 = new javax.swing.JButton();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(32767, 15));
+        filler13 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 40), new java.awt.Dimension(0, 40), new java.awt.Dimension(32767, 40));
         jButton2 = new javax.swing.JButton();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(32767, 15));
+        filler14 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 40), new java.awt.Dimension(0, 40), new java.awt.Dimension(32767, 40));
         jButton3 = new javax.swing.JButton();
         filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
         jButton4 = new javax.swing.JButton();
         filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(32767, 15));
-        jButton5 = new javax.swing.JButton();
+        filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
+        btn_ajustes = new javax.swing.JButton();
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 40), new java.awt.Dimension(0, 40), new java.awt.Dimension(32767, 40));
         filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -56,12 +62,14 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
+        jPanel7 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(400, 800));
         setLayout(new java.awt.BorderLayout());
 
         jPanel3.setBackground(new java.awt.Color(96, 164, 178));
-        jPanel3.setPreferredSize(new java.awt.Dimension(250, 100));
+        jPanel3.setPreferredSize(new java.awt.Dimension(350, 100));
+        jPanel3.setRequestFocusEnabled(false);
         jPanel3.setLayout(new java.awt.BorderLayout());
         jPanel3.add(filler6, java.awt.BorderLayout.WEST);
 
@@ -70,7 +78,7 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel1.add(filler1);
 
         jButton1.setBackground(new java.awt.Color(96, 164, 178));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 30)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Novo Projeto");
         jButton1.setAlignmentX(0.5F);
@@ -82,9 +90,10 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         });
         jPanel1.add(jButton1);
         jPanel1.add(filler2);
+        jPanel1.add(filler13);
 
         jButton2.setBackground(new java.awt.Color(96, 164, 178));
-        jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 30)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Todos projetos");
         jButton2.setAlignmentX(0.5F);
@@ -96,9 +105,10 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         });
         jPanel1.add(jButton2);
         jPanel1.add(filler3);
+        jPanel1.add(filler14);
 
         jButton3.setBackground(new java.awt.Color(96, 164, 178));
-        jButton3.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Helvetica Neue", 0, 30)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Exportar projeto");
         jButton3.setAlignmentX(0.5F);
@@ -107,14 +117,14 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel1.add(filler5);
 
         jButton4.setBackground(new java.awt.Color(96, 164, 178));
-        jButton4.setFont(new java.awt.Font("Helvetica Neue", 0, 20)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Helvetica Neue", 0, 30)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ajuda_ajustes.png"))); // NOI18N
         jButton4.setText("  Ajuda");
         jButton4.setToolTipText("");
         jButton4.setAlignmentX(0.5F);
         jButton4.setBorder(null);
-        jButton4.setPreferredSize(new java.awt.Dimension(50, 50));
+        jButton4.setPreferredSize(new java.awt.Dimension(50, 60));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -122,20 +132,22 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         });
         jPanel1.add(jButton4);
         jPanel1.add(filler8);
+        jPanel1.add(filler15);
 
-        jButton5.setBackground(new java.awt.Color(96, 164, 178));
-        jButton5.setFont(new java.awt.Font("Helvetica Neue", 0, 20)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuracao_ajustes.png"))); // NOI18N
-        jButton5.setText("  Ajustes");
-        jButton5.setAlignmentX(0.5F);
-        jButton5.setBorder(null);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_ajustes.setBackground(new java.awt.Color(96, 164, 178));
+        btn_ajustes.setFont(new java.awt.Font("Helvetica Neue", 0, 30)); // NOI18N
+        btn_ajustes.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuracao_ajustes.png"))); // NOI18N
+        btn_ajustes.setText("  Ajustes");
+        btn_ajustes.setAlignmentX(0.5F);
+        btn_ajustes.setBorder(null);
+        btn_ajustes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_ajustesActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5);
+        jPanel1.add(btn_ajustes);
+        jPanel1.add(filler4);
 
         jPanel3.add(jPanel1, java.awt.BorderLayout.CENTER);
         jPanel3.add(filler7, java.awt.BorderLayout.EAST);
@@ -145,29 +157,27 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel2.setPreferredSize(new java.awt.Dimension(100, 100));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 30)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(88, 88, 88));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/lampada.png"))); // NOI18N
         jLabel1.setText("  Todos projetos");
+        jLabel1.setAlignmentX(0.5F);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1136, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 202, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 203, Short.MAX_VALUE)))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(253, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 31, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(0, 32, Short.MAX_VALUE)))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(106, 106, 106))
         );
 
         jPanel2.add(jPanel5, java.awt.BorderLayout.NORTH);
@@ -178,7 +188,7 @@ public class GerenciarProjetos extends javax.swing.JPanel {
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
         jButton6.setToolTipText("novo projeto");
-        jButton6.setPreferredSize(new java.awt.Dimension(100, 100));
+        jButton6.setPreferredSize(new java.awt.Dimension(190, 250));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -196,20 +206,48 @@ public class GerenciarProjetos extends javax.swing.JPanel {
 
         jPanel2.add(jPanel6, java.awt.BorderLayout.CENTER);
 
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1036, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel7, java.awt.BorderLayout.PAGE_END);
+
         add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       
+        Atencao te2 = new Atencao();        
+        
+        jPanel2.removeAll();
+        jPanel2.add(te2);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+           
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btn_ajustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ajustesActionPerformed
+        
+        Ajustes te1 = new Ajustes();        
+        
+        jPanel2.removeAll();
+        jPanel2.add(te1);
+        jPanel2.repaint();
+        jPanel2.revalidate();
+        
+        
+    }//GEN-LAST:event_btn_ajustesActionPerformed
 
     private void novoProjeto(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_novoProjeto
         Container pai = this.getParent();
@@ -228,14 +266,21 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+       
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_ajustes;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler11;
     private javax.swing.Box.Filler filler12;
+    private javax.swing.Box.Filler filler13;
+    private javax.swing.Box.Filler filler14;
+    private javax.swing.Box.Filler filler15;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler4;
     private javax.swing.Box.Filler filler5;
     private javax.swing.Box.Filler filler6;
     private javax.swing.Box.Filler filler7;
@@ -245,7 +290,6 @@ public class GerenciarProjetos extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -254,6 +298,8 @@ public class GerenciarProjetos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -27,18 +27,7 @@ public class teste_INICIO extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        btn_todos_projetos = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        btn_configuracao = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 50), new java.awt.Dimension(0, 50), new java.awt.Dimension(32767, 50));
         jPanel3 = new javax.swing.JPanel();
-        card_inicial = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 50), new java.awt.Dimension(0, 50), new java.awt.Dimension(32767, 50));
         card_ajustes = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -60,177 +49,7 @@ public class teste_INICIO extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jPanel2.setBackground(new java.awt.Color(96, 164, 178));
-        jPanel2.setPreferredSize(new java.awt.Dimension(500, 200));
-
-        jButton2.setBackground(new java.awt.Color(96, 164, 178));
-        jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 35)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Novo projeto");
-        jButton2.setAlignmentX(0.5F);
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setPreferredSize(new java.awt.Dimension(150, 110));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        btn_todos_projetos.setBackground(new java.awt.Color(96, 164, 178));
-        btn_todos_projetos.setFont(new java.awt.Font("Helvetica Neue", 0, 35)); // NOI18N
-        btn_todos_projetos.setForeground(new java.awt.Color(255, 255, 255));
-        btn_todos_projetos.setText("Todos projetos");
-        btn_todos_projetos.setAlignmentX(0.5F);
-        btn_todos_projetos.setBorder(null);
-        btn_todos_projetos.setBorderPainted(false);
-        btn_todos_projetos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_todos_projetos.setPreferredSize(new java.awt.Dimension(150, 110));
-        btn_todos_projetos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_todos_projetosActionPerformed(evt);
-            }
-        });
-
-        jButton3.setBackground(new java.awt.Color(96, 164, 178));
-        jButton3.setFont(new java.awt.Font("Helvetica Neue", 0, 35)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Exportar projeto");
-        jButton3.setAlignmentX(0.5F);
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setPreferredSize(new java.awt.Dimension(150, 110));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        btn_configuracao.setBackground(new java.awt.Color(96, 164, 178));
-        btn_configuracao.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
-        btn_configuracao.setForeground(new java.awt.Color(255, 255, 255));
-        btn_configuracao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuracao_ajustes.png"))); // NOI18N
-        btn_configuracao.setText("Configuração");
-        btn_configuracao.setAlignmentX(0.5F);
-        btn_configuracao.setBorder(null);
-        btn_configuracao.setBorderPainted(false);
-        btn_configuracao.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btn_configuracao.setIconTextGap(10);
-        btn_configuracao.setPreferredSize(new java.awt.Dimension(100, 100));
-        btn_configuracao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_configuracaoActionPerformed(evt);
-            }
-        });
-
-        jButton4.setBackground(new java.awt.Color(96, 164, 178));
-        jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ajuda_ajustes.png"))); // NOI18N
-        jButton4.setText("Ajuda");
-        jButton4.setAlignmentX(0.5F);
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton4.setIconTextGap(10);
-        jButton4.setPreferredSize(new java.awt.Dimension(200, 200));
-        jButton4.setRequestFocusEnabled(false);
-        jButton4.setRolloverEnabled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_todos_projetos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_configuracao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
-                .addContainerGap(109, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(241, 241, 241))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(btn_todos_projetos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 504, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(btn_configuracao, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70))
-        );
-
-        jPanel1.add(jPanel2, java.awt.BorderLayout.LINE_START);
-
         jPanel3.setLayout(new java.awt.CardLayout());
-
-        card_inicial.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 48)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/lampada.png"))); // NOI18N
-        jLabel7.setText("Todos os projetos");
-        jLabel7.setIconTextGap(20);
-
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
-        jToggleButton1.setAlignmentX(0.5F);
-        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton1.setIconTextGap(40);
-        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout card_inicialLayout = new javax.swing.GroupLayout(card_inicial);
-        card_inicial.setLayout(card_inicialLayout);
-        card_inicialLayout.setHorizontalGroup(
-            card_inicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(card_inicialLayout.createSequentialGroup()
-                .addGroup(card_inicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(card_inicialLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel7))
-                    .addGroup(card_inicialLayout.createSequentialGroup()
-                        .addGap(289, 289, 289)
-                        .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(card_inicialLayout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(469, Short.MAX_VALUE))
-        );
-        card_inicialLayout.setVerticalGroup(
-            card_inicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(card_inicialLayout.createSequentialGroup()
-                .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addGap(62, 62, 62)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(672, Short.MAX_VALUE))
-        );
-
-        jPanel3.add(card_inicial, "card2");
 
         card_ajustes.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -265,7 +84,7 @@ public class teste_INICIO extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(629, Short.MAX_VALUE))
+                        .addContainerGap(695, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -361,9 +180,9 @@ public class teste_INICIO extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(teste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btn_aplicar)
-                .addGap(21, 21, 21))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(242, 242, 42));
@@ -374,7 +193,7 @@ public class teste_INICIO extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(87, 87, 87));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/configuracao_dark_ajuste.png"))); // NOI18N
-        jLabel1.setText("Configuração");
+        jLabel1.setText("Ajustes");
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jLabel1.setIconTextGap(20);
@@ -384,16 +203,16 @@ public class teste_INICIO extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addComponent(jLabel1)
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout card_ajustesLayout = new javax.swing.GroupLayout(card_ajustes);
@@ -412,7 +231,7 @@ public class teste_INICIO extends javax.swing.JFrame {
                     .addGroup(card_ajustesLayout.createSequentialGroup()
                         .addGap(229, 229, 229)
                         .addComponent(filler3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(777, Short.MAX_VALUE))
+                .addContainerGap(843, Short.MAX_VALUE))
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         card_ajustesLayout.setVerticalGroup(
@@ -437,7 +256,7 @@ public class teste_INICIO extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1072, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,21 +266,6 @@ public class teste_INICIO extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void btn_todos_projetosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_todos_projetosActionPerformed
-       jPanel3.removeAll();
-       jPanel3.add(card_inicial);
-       jPanel3.repaint();
-       jPanel3.revalidate();
-    }//GEN-LAST:event_btn_todos_projetosActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
@@ -483,17 +287,6 @@ public class teste_INICIO extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void btn_configuracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configuracaoActionPerformed
-        jPanel3.removeAll();
-        jPanel3.add(card_ajustes);
-        jPanel3.repaint();
-        jPanel3.revalidate();
-    }//GEN-LAST:event_btn_configuracaoActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void btn_aplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aplicarActionPerformed
         //teste
         //inserir alert para passar feedback que as alteracoes foram feitas
@@ -506,10 +299,6 @@ public class teste_INICIO extends javax.swing.JFrame {
                btn_aplicar.setBackground(new java.awt.Color(153, 255, 51));
         }
     }//GEN-LAST:event_btn_aplicarActionPerformed
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -548,17 +337,9 @@ public class teste_INICIO extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btn_aplicar;
-    private javax.swing.JButton btn_configuracao;
-    private javax.swing.JButton btn_todos_projetos;
     private javax.swing.JPanel card_ajustes;
-    private javax.swing.JPanel card_inicial;
-    private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
-    private javax.swing.Box.Filler filler4;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -567,14 +348,11 @@ public class teste_INICIO extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton teste;
     // End of variables declaration//GEN-END:variables
 }

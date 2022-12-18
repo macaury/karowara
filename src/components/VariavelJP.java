@@ -5,7 +5,6 @@ import java.awt.Point;
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import menuComponents.MenuVariavelJP;
-import telas.Principal;
 
 public class VariavelJP extends Elemento {
     private MenuVariavelJP menuVar;
