@@ -5,6 +5,7 @@
 package components;
 
 import java.awt.Component;
+import java.awt.Point;
 
 /**
  *

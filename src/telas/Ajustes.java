@@ -140,11 +140,13 @@ public class Ajustes extends javax.swing.JPanel {
         jLabel3.setAlignmentX(0.5F);
         jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel3.setMixingCutoutShape(null);
         jLabel3.setPreferredSize(new java.awt.Dimension(234, 60));
         jPanel5.add(jLabel3, java.awt.BorderLayout.PAGE_START);
 
         jPanel7.setOpaque(false);
         jPanel7.setPreferredSize(new java.awt.Dimension(350, 256));
+        jPanel7.setSize(new java.awt.Dimension(200, 200));
         jPanel7.setLayout(new java.awt.GridLayout(0, 1));
         jPanel7.add(filler7);
 
@@ -195,7 +197,7 @@ public class Ajustes extends javax.swing.JPanel {
 
         jPanel1.setOpaque(false);
         jPanel1.setRequestFocusEnabled(false);
-        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel1.setLayout(new java.awt.GridLayout());
         jPanel1.add(filler11);
 
         jToggleButton1.setBackground(new java.awt.Color(0, 0, 0));
