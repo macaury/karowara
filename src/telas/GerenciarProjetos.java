@@ -153,21 +153,21 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 731, Short.MAX_VALUE)
+            .addGap(0, 1136, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 202, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 203, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 30, Short.MAX_VALUE)
+                    .addGap(0, 31, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addGap(0, 31, Short.MAX_VALUE)))
+                    .addGap(0, 32, Short.MAX_VALUE)))
         );
 
         jPanel2.add(jPanel5, java.awt.BorderLayout.NORTH);
@@ -179,6 +179,11 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
         jButton6.setToolTipText("novo projeto");
         jButton6.setPreferredSize(new java.awt.Dimension(100, 100));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton6);
 
         jScrollPane1.setViewportView(jPanel4);
@@ -218,6 +223,10 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         cl.show(pai, novoProj.getName());
         
     }//GEN-LAST:event_novoProjeto
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
