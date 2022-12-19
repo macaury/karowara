@@ -70,8 +70,10 @@ public class ArrayJP extends Elemento {
         add(NomeJL);
         add(filler4);
 
+        AdicionarLinhaJB.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
         AdicionarLinhaJB.setText("+L");
         AdicionarLinhaJB.setBorder(null);
+        AdicionarLinhaJB.setMargin(new java.awt.Insets(10, 20, 10, 20));
         AdicionarLinhaJB.setPreferredSize(new java.awt.Dimension(50, 23));
         AdicionarLinhaJB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -81,8 +83,11 @@ public class ArrayJP extends Elemento {
         add(AdicionarLinhaJB);
         add(filler3);
 
+        AdicionarColunaJB1.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
         AdicionarColunaJB1.setText("+C");
+        AdicionarColunaJB1.setToolTipText("");
         AdicionarColunaJB1.setBorder(null);
+        AdicionarColunaJB1.setMargin(new java.awt.Insets(10, 20, 10, 20));
         AdicionarColunaJB1.setPreferredSize(new java.awt.Dimension(50, 23));
         AdicionarColunaJB1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
@@ -96,6 +101,7 @@ public class ArrayJP extends Elemento {
         AgruparJP.setLayout(new java.awt.GridLayout(1, 1));
 
         ValorJTF.setEditable(false);
+        ValorJTF.setBackground(new java.awt.Color(255, 255, 255));
         ValorJTF.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         ValorJTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         ValorJTF.setHighlighter(null);

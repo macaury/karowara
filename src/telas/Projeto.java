@@ -307,7 +307,9 @@ public class Projeto extends javax.swing.JPanel {
         SlidesJB.setText("Slides");
         SlidesJB.setAlignmentX(0.5F);
         SlidesJB.setBorder(null);
+        SlidesJB.setMaximumSize(new java.awt.Dimension(65, 35));
         SlidesJB.setOpaque(true);
+        SlidesJB.setPreferredSize(new java.awt.Dimension(65, 35));
         SlidesJB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SlidesJBmudarParaMenuSlide(evt);
@@ -324,6 +326,8 @@ public class Projeto extends javax.swing.JPanel {
         VariavelMenuJP.setBorder(null);
         VariavelMenuJP.setBorderPainted(false);
         VariavelMenuJP.setFocusPainted(false);
+        VariavelMenuJP.setMaximumSize(new java.awt.Dimension(85, 35));
+        VariavelMenuJP.setPreferredSize(new java.awt.Dimension(74, 35));
         VariavelMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mudarMenuParaVariavelMenuJP(evt);
@@ -344,6 +348,7 @@ public class Projeto extends javax.swing.JPanel {
         ArrayMenuJP.setBorder(null);
         ArrayMenuJP.setBorderPainted(false);
         ArrayMenuJP.setFocusPainted(false);
+        ArrayMenuJP.setMaximumSize(new java.awt.Dimension(60, 35));
         ArrayMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 mudarMenuParaArrayMenuJP(evt);
@@ -364,6 +369,7 @@ public class Projeto extends javax.swing.JPanel {
         CondicaoMenuJP.setBorder(null);
         CondicaoMenuJP.setBorderPainted(false);
         CondicaoMenuJP.setFocusPainted(false);
+        CondicaoMenuJP.setMaximumSize(new java.awt.Dimension(100, 35));
         CondicaoMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mudarMenuParaCondicaoMenuJP(evt);
@@ -384,6 +390,7 @@ public class Projeto extends javax.swing.JPanel {
         LacoMenuJP.setBorder(null);
         LacoMenuJP.setBorderPainted(false);
         LacoMenuJP.setFocusPainted(false);
+        LacoMenuJP.setMaximumSize(new java.awt.Dimension(55, 35));
         LacoMenuJP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mudarMenuParaLacoMenuJP(evt);

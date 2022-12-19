@@ -46,6 +46,7 @@ public class LacoJP extends Elemento {
         AgruparJP.add(filler1);
 
         jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
         AgruparJP.add(jTextField1);
 

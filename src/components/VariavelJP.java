@@ -49,6 +49,7 @@ public class VariavelJP extends Elemento {
         Agrupar.add(filler5);
 
         ValorJTF.setEditable(false);
+        ValorJTF.setBackground(new java.awt.Color(255, 255, 255));
         ValorJTF.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         ValorJTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ValorJTF.setBorder(null);

@@ -56,17 +56,22 @@ public class CondicaoJP extends Elemento {
         AgruparCondicaoJP.setLayout(new javax.swing.BoxLayout(AgruparCondicaoJP, javax.swing.BoxLayout.LINE_AXIS));
 
         Valor1JTF.setEditable(false);
+        Valor1JTF.setBackground(new java.awt.Color(255, 255, 255));
         Valor1JTF.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Valor1JTF.setAutoscrolls(false);
         Valor1JTF.setBorder(null);
         Valor1JTF.setHighlighter(null);
         AgruparCondicaoJP.add(Valor1JTF);
 
+        CompararJCB.setBackground(new java.awt.Color(242, 242, 242));
+        CompararJCB.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
         CompararJCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "==", "!=", ">=", "<=", ">", "<" }));
         CompararJCB.setBorder(null);
+        CompararJCB.setPreferredSize(new java.awt.Dimension(90, 52));
         AgruparCondicaoJP.add(CompararJCB);
 
         Valor2JTF.setEditable(false);
+        Valor2JTF.setBackground(new java.awt.Color(255, 255, 255));
         Valor2JTF.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         Valor2JTF.setBorder(null);
         AgruparCondicaoJP.add(Valor2JTF);

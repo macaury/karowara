@@ -226,26 +226,14 @@ public class GerenciarProjetos extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       
-        /*Atencao te2 = new Atencao();        
-        
-        jPanel2.removeAll();
-        jPanel2.add(te2);
-        jPanel2.repaint();
-        jPanel2.revalidate();*/
+
         CardLayout cl = (CardLayout) jPanel2.getLayout();
         
         cl.show(jPanel2, "Atencao");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btn_ajustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ajustesActionPerformed
-        
-        /*Ajustes te1 = new Ajustes();        
-        
-        jPanel2.removeAll();
-        jPanel2.add(te1);
-        jPanel2.repaint();
-        jPanel2.revalidate();*/
+
         CardLayout cl = (CardLayout) jPanel2.getLayout();
         
         cl.show(jPanel2, "Ajustes");
