@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/telas/principal.java</file>
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/telas/teste_INICIO.java</file>
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/ajustesComponents/OpcoesAcessibilidade.java</file>
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/ajustesComponents/teste.java</file>
-            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/telas/TesteEscolherTela.java</file>
+            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/telas/Atencao.java</file>
+            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/menuComponents/MenuArrayJP.java</file>
+            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/components/ValorJP.java</file>
+            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/telas/Ajustes.java</file>
+            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/components/Elemento.java</file>
+            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/menuComponents/MenuVariavelJP.java</file>
+            <file>file:/Users/macaurycarvalho/Documents/GitHub/Karowara/karowara/src/telas/GerenciarProjetos.java</file>
         </group>
     </open-files>
 </project-private>
