@@ -169,13 +169,18 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel2.setLayout(new java.awt.CardLayout());
         jPanel2.add(ajustes, "Ajustes");
 
+        jPanel8.setMinimumSize(new java.awt.Dimension(450, 208));
         jPanel8.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(88, 88, 88));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/lampada.png"))); // NOI18N
         jLabel1.setText("  Todos projetos");
         jLabel1.setAlignmentX(0.5F);
+        jLabel1.setMaximumSize(new java.awt.Dimension(500, 58));
+        jLabel1.setPreferredSize(new java.awt.Dimension(500, 100));
+        jLabel1.setRequestFocusEnabled(false);
         jPanel8.add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         jPanel6.setLayout(new java.awt.BorderLayout());
@@ -206,7 +211,7 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1036, Short.MAX_VALUE)
+            .addGap(0, 999, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
