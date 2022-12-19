@@ -8,7 +8,9 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.PopupMenu;
+import java.awt.event.MouseAdapter;
 import java.util.Arrays;
+import javax.swing.JButton;
 
 
 /**
@@ -17,11 +19,13 @@ import java.util.Arrays;
  */
 public class GerenciarProjetos extends javax.swing.JPanel {
 
-
+    MouseParaProjeto mouseProj;
     
     
     public GerenciarProjetos() {
         initComponents();
+        
+        mouseProj = new MouseParaProjeto();
     }
 
     /**
@@ -52,7 +56,8 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 40), new java.awt.Dimension(0, 40), new java.awt.Dimension(32767, 40));
         filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
         jPanel2 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        ajustes = new telas.Ajustes();
+        jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -63,6 +68,7 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50), new java.awt.Dimension(50, 50));
         jPanel7 = new javax.swing.JPanel();
+        atencao1 = new telas.Atencao();
 
         setPreferredSize(new java.awt.Dimension(400, 800));
         setLayout(new java.awt.BorderLayout());
@@ -98,6 +104,11 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jButton2.setText("Todos projetos");
         jButton2.setAlignmentX(0.5F);
         jButton2.setBorder(null);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                irParaTodosProjetos(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -155,32 +166,17 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         add(jPanel3, java.awt.BorderLayout.WEST);
 
         jPanel2.setPreferredSize(new java.awt.Dimension(100, 100));
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel2.setLayout(new java.awt.CardLayout());
+        jPanel2.add(ajustes, "Ajustes");
+
+        jPanel8.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(88, 88, 88));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/lampada.png"))); // NOI18N
         jLabel1.setText("  Todos projetos");
         jLabel1.setAlignmentX(0.5F);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(106, 106, 106))
-        );
-
-        jPanel2.add(jPanel5, java.awt.BorderLayout.NORTH);
+        jPanel8.add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         jPanel6.setLayout(new java.awt.BorderLayout());
 
@@ -189,9 +185,9 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/add.png"))); // NOI18N
         jButton6.setToolTipText("novo projeto");
         jButton6.setPreferredSize(new java.awt.Dimension(190, 250));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                novoProjeto(evt);
             }
         });
         jPanel4.add(jButton6);
@@ -204,7 +200,7 @@ public class GerenciarProjetos extends javax.swing.JPanel {
         jPanel6.add(filler11, java.awt.BorderLayout.WEST);
         jPanel6.add(filler12, java.awt.BorderLayout.EAST);
 
-        jPanel2.add(jPanel6, java.awt.BorderLayout.CENTER);
+        jPanel8.add(jPanel6, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -217,7 +213,10 @@ public class GerenciarProjetos extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel7, java.awt.BorderLayout.PAGE_END);
+        jPanel8.add(jPanel7, java.awt.BorderLayout.PAGE_END);
+
+        jPanel2.add(jPanel8, "Todos projetos");
+        jPanel2.add(atencao1, "Atencao");
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -228,23 +227,28 @@ public class GerenciarProjetos extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        
-        Atencao te2 = new Atencao();        
+        /*Atencao te2 = new Atencao();        
         
         jPanel2.removeAll();
         jPanel2.add(te2);
         jPanel2.repaint();
-        jPanel2.revalidate();
-           
+        jPanel2.revalidate();*/
+        CardLayout cl = (CardLayout) jPanel2.getLayout();
+        
+        cl.show(jPanel2, "Atencao");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btn_ajustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ajustesActionPerformed
         
-        Ajustes te1 = new Ajustes();        
+        /*Ajustes te1 = new Ajustes();        
         
         jPanel2.removeAll();
         jPanel2.add(te1);
         jPanel2.repaint();
-        jPanel2.revalidate();
+        jPanel2.revalidate();*/
+        CardLayout cl = (CardLayout) jPanel2.getLayout();
+        
+        cl.show(jPanel2, "Ajustes");
         
         
     }//GEN-LAST:event_btn_ajustesActionPerformed
@@ -260,16 +264,38 @@ public class GerenciarProjetos extends javax.swing.JPanel {
 
         cl.show(pai, novoProj.getName());
         
+        JButton novoBotao = new JButton();
+        novoBotao.setName(novoProj.getName());
+        novoBotao.setPreferredSize(jButton6.getPreferredSize());
+        novoBotao.addMouseListener(mouseProj);
+        
+        jPanel4.add(novoBotao, 1);
     }//GEN-LAST:event_novoProjeto
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void irParaTodosProjetos(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_irParaTodosProjetos
+        CardLayout cl = (CardLayout) jPanel2.getLayout();
+        
+        cl.show(jPanel2, "Todos projetos");
+    }//GEN-LAST:event_irParaTodosProjetos
+    
+    private void irParaProjeto(java.awt.event.MouseEvent evt){
+        CardLayout cl = (CardLayout) this.getParent().getLayout();
 
-       
+        cl.show(this.getParent(), evt.getComponent().getName());
+    }
+    
+    private class MouseParaProjeto extends MouseAdapter{
+        
+       @Override
+       public void mouseReleased(java.awt.event.MouseEvent evt){
+           irParaProjeto(evt);
+       }
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private telas.Ajustes ajustes;
+    private telas.Atencao atencao1;
     private javax.swing.JButton btn_ajustes;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
@@ -296,9 +322,9 @@ public class GerenciarProjetos extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 

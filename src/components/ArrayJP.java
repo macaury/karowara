@@ -3,7 +3,10 @@ package components;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
+import javax.swing.JLayeredPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import menuComponents.MenuArrayJP;
@@ -15,12 +18,17 @@ public class ArrayJP extends Elemento {
     
     private String[] valores;
     
+    
+    private MouseParaValorExterno meuMouse;
     public ArrayJP(MenuArrayJP menuArray, JButton arrayMenuJP) {
         super();
         initComponents();
         
         this.menuArray = menuArray;
         this.arrayMenuJP = arrayMenuJP;
+        
+        meuMouse = new MouseParaValorExterno();
+        ValorJTF.addMouseListener(meuMouse);
     }
 
     
@@ -44,7 +52,7 @@ public class ArrayJP extends Elemento {
         setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         setMinimumSize(new java.awt.Dimension(250, 50));
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(250, 50));
+        setPreferredSize(new java.awt.Dimension(250, 75));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 alterarMenu(evt);
@@ -54,9 +62,11 @@ public class ArrayJP extends Elemento {
         add(filler1);
 
         IconJL.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        IconJL.setText("ARRAY");
+        IconJL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/grande/bloco array.png"))); // NOI18N
         add(IconJL);
         add(filler5);
+
+        NomeJL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         add(NomeJL);
         add(filler4);
 
@@ -82,13 +92,16 @@ public class ArrayJP extends Elemento {
         add(AdicionarColunaJB1);
         add(filler2);
 
+        AgruparJP.setPreferredSize(new java.awt.Dimension(75, 75));
         AgruparJP.setLayout(new java.awt.GridLayout(1, 1));
 
         ValorJTF.setEditable(false);
+        ValorJTF.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         ValorJTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        ValorJTF.setHighlighter(null);
         ValorJTF.setMargin(new java.awt.Insets(4, 10, 4, 10));
         ValorJTF.setMinimumSize(new java.awt.Dimension(22, 22));
-        ValorJTF.setPreferredSize(new java.awt.Dimension(22, 22));
+        ValorJTF.setPreferredSize(new java.awt.Dimension(75, 75));
         AgruparJP.add(ValorJTF);
 
         add(AgruparJP);
@@ -113,6 +126,19 @@ public class ArrayJP extends Elemento {
        
     }
     
+    public void alterarNome(String nome){
+        NomeJL.setText(nome);
+    }
+    
+    public void alterarValor(String valor, Point coordenada){
+        coordenada.x -= this.getLocation().x;
+        coordenada.y -= this.getLocation().y;
+        
+        coordenada.x -= AgruparJP.getLocation().x;
+        
+        ((JTextField)AgruparJP.getComponentAt(coordenada)).setText(valor);
+    }
+    
     private void adicionarColuna(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarColuna
         GridLayout layoutAgruparJP = (GridLayout)AgruparJP.getLayout();
         
@@ -123,10 +149,13 @@ public class ArrayJP extends Elemento {
             
             novoValor.setEditable(false);
             novoValor.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(102,102,102)));
-            
-            novoWidth = this.getWidth();
-            novoWidth += ValorJTF.getWidth();
+            novoValor.setFont(ValorJTF.getFont());
+            novoValor.addMouseListener(meuMouse);
+            novoValor.setHighlighter(null);
         }
+        novoWidth = this.getWidth();
+        novoWidth += ValorJTF.getPreferredSize().getWidth();
+        
         this.setSize( novoWidth, this.getHeight());
         
         layoutAgruparJP.setColumns(layoutAgruparJP.getColumns()+1);
@@ -146,6 +175,9 @@ public class ArrayJP extends Elemento {
             
             novoValor.setEditable(false);
             novoValor.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(102,102,102)));
+            novoValor.setFont(ValorJTF.getFont());
+            novoValor.addMouseListener(meuMouse);
+            novoValor.setHighlighter(null);
             
             novoHeight = this.getHeight();
             novoHeight += ValorJTF.getHeight();
@@ -164,6 +196,34 @@ public class ArrayJP extends Elemento {
     }//GEN-LAST:event_alterarMenu
 
 
+    private void criarCopiaValor(java.awt.event.MouseEvent evt) {                                 
+        Point pos = this.getLocation();
+        pos.x += AgruparJP.getX();
+        pos.x += evt.getComponent().getX();
+        pos.y += evt.getComponent().getY();
+        pos.x += evt.getX();
+        pos.y += evt.getY();
+        
+        String valor = ((JTextField)evt.getComponent()).getText();
+        if(!valor.equals("")){
+            ValorJP teste = new ValorJP(valor);
+            this.getParent().add(teste, JLayeredPane.MODAL_LAYER);
+            teste.setSize(teste.getPreferredSize());
+            teste.setLocation(pos);
+            revalidate();
+        }
+        
+    }  
+    
+    private class MouseParaValorExterno extends MouseAdapter{
+        
+       @Override
+       public void mouseReleased(java.awt.event.MouseEvent evt){
+           criarCopiaValor(evt);
+       }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdicionarColunaJB1;
     private javax.swing.JButton AdicionarLinhaJB;

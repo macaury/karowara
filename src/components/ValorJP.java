@@ -40,28 +40,42 @@ public class ValorJP extends Elemento {
         setLayout(new java.awt.BorderLayout());
 
         ValorJL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ValorJL.setText("asdasd");
         add(ValorJL, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     private void recebeValorExterno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recebeValorExterno
         for (Component componente : this.getParent().getComponents()) {
-            if(componente.getClass() == VariavelJP.class){
-                if(this.getX() >= componente.getLocation().getX() && this.getX() < componente.getWidth()+componente.getLocation().getX()){
-                    if(this.getY() >= componente.getLocation().getY() && this.getY() < componente.getHeight()+componente.getLocation().getY()){
-                        VariavelJP var = (VariavelJP) componente;
-                        var.alterarValor(ValorJL.getText());
-                        this.getParent().remove(this);
-                        revalidate();
-                        
-                    }
+            if(isOver(this,componente)){
+                if(componente instanceof VariavelJP){
+                    VariavelJP var = (VariavelJP) componente;
+                    var.alterarValor(ValorJL.getText());
+                    this.getParent().remove(this);
+                    revalidate();
+                }else if(componente instanceof ArrayJP){
+                    ArrayJP array = (ArrayJP) componente;
+                    array.alterarValor(ValorJL.getText(), this.getLocation());
+                    this.getParent().remove(this);
+                    revalidate();
+                }else if(componente instanceof CondicaoJP){
+                    CondicaoJP condicao = (CondicaoJP) componente;
+                    condicao.alterarValor(ValorJL.getText(), this.getLocation());
+                    this.getParent().remove(this);
+                    revalidate();
                 }
             }
         }
         
     }//GEN-LAST:event_recebeValorExterno
 
+    private boolean isOver(Component a, Component b){
+        if(a.getX() >= b.getLocation().getX() && a.getX() < b.getWidth()+b.getLocation().getX()){
+            if(a.getY() >= b.getLocation().getY() && a.getY() < b.getHeight()+b.getLocation().getY()){
+                return true;
+            }
+        }
+        return false;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ValorJL;
