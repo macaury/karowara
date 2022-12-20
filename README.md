@@ -1,7 +1,3 @@
-# karowara
-software criado para auxiliar os professores, em sala de aula, para o ensino básico de algoritmos e linguagem C
-
-
 <p align="center">
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
@@ -9,7 +5,8 @@ software criado para auxiliar os professores, em sala de aula, para o ensino bá
   <img src="https://img.shields.io/github/repo-size/macaury/karowara"/>
 </p>
 
-
+# karowara
+software criado para auxiliar os professores, em sala de aula, para o ensino básico de algoritmos e linguagem C
 
 
 # Tópicos 
