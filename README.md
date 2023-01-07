@@ -46,11 +46,8 @@ software criado para auxiliar os professores, em sala de aula, para o ensino bá
 ## Aplicação
 
 
-
 ## Autor
 
 - [@Macaury Carvalho](https://www.github.com/macaury)
 - [@Gabriel Barros](https://github.com/Anebe)
 
-[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/u/4/#inbox?compose=new)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/macaury-carvalho-5011b8205/)
